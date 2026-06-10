@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Alfa_Slab_One, Inter } from "next/font/google";
 
+import { AnnouncementBar } from "@/components/chrome/AnnouncementBar";
+import { BottomBar } from "@/components/chrome/BottomBar";
+import { Footer } from "@/components/chrome/Footer";
+import { Header } from "@/components/chrome/Header";
+import { LocationDialog } from "@/components/chrome/LocationDialog";
+import { SiteStateProvider } from "@/components/chrome/site-state";
+import { getLocations } from "@/lib/content";
+
 import "./globals.css";
 
 /*
@@ -31,9 +39,20 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const locations = getLocations();
+
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SiteStateProvider locations={locations}>
+          <AnnouncementBar />
+          <Header />
+          {children}
+          <Footer />
+          <BottomBar />
+          <LocationDialog />
+        </SiteStateProvider>
+      </body>
     </html>
   );
 }

@@ -12,8 +12,9 @@ test.describe("homepage", () => {
       page.getByRole("heading", { level: 1, name: "Los Hermanos" }),
     ).toBeVisible();
 
+    const main = page.getByRole("main");
     for (const location of locationsJson.locations) {
-      const card = page.getByRole("listitem").filter({
+      const card = main.getByRole("listitem").filter({
         has: page.getByRole("heading", { name: location.name, exact: true }),
       });
       await expect(card).toBeVisible();

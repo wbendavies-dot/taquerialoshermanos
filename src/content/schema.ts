@@ -99,6 +99,23 @@ export const specialSchema = z.object({
 
 export const specialsSchema = z.object({ specials: z.array(specialSchema) });
 
+/**
+ * Site-wide settings. `announcement: null` hides the announcement bar —
+ * it only renders with a real, owner-approved offer (no invented promos).
+ */
+export const siteSchema = z.object({
+  instagramUrl: z.string().url(),
+  facebookUrls: z.record(z.string(), z.string().url()),
+  announcement: z
+    .object({
+      message: z.string().min(1),
+      href: z.string().optional(),
+      /** Last day the bar shows, YYYY-MM-DD. */
+      expiresOn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    })
+    .nullable(),
+});
+
 export type DayHours = z.infer<typeof dayHoursSchema>;
 export type WeeklyHours = z.infer<typeof weeklyHoursSchema>;
 export type HolidayOverride = z.infer<typeof holidayOverrideSchema>;

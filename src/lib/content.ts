@@ -2,10 +2,12 @@ import { z } from "zod";
 
 import locationsJson from "@/content/locations.json";
 import menuJson from "@/content/menu.json";
+import siteJson from "@/content/site.json";
 import specialsJson from "@/content/specials.json";
 import {
   locationSchema,
   menuSchema,
+  siteSchema,
   specialsSchema,
   type Location,
   type MenuCategory,
@@ -38,6 +40,11 @@ const locationsFileSchema = z.object({
 const parsedLocations = locationsFileSchema.parse(locationsJson);
 const parsedMenu = menuSchema.parse(menuJson);
 const parsedSpecials = specialsSchema.parse(specialsJson);
+const parsedSite = siteSchema.parse(siteJson);
+
+export function getSiteSettings() {
+  return parsedSite;
+}
 
 export function getLocations(): Location[] {
   return parsedLocations.locations;

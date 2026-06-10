@@ -54,4 +54,26 @@
     outline: 2px solid var(--color-gold);
     outline-offset: 2px;
   }
+
+  /* Lock page scroll while a modal dialog is open */
+  body:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  /* Progressive enhancement: motion wrappers SSR with opacity 0; when
+     scripting is unavailable the animation can never run, so force
+     visibility (CLAUDE.md: content readable with JS disabled). */
+  @media (scripting: none) {
+    [data-motion] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  /* Reserve room for the fixed mobile action bar (avoids content occlusion) */
+  @media (width < 48rem) {
+    body {
+      padding-bottom: calc(3.5rem + env(safe-area-inset-bottom));
+    }
+  }
 }

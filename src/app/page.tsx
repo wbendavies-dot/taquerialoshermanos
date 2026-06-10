@@ -1,8 +1,10 @@
+import { FadeIn } from "@/components/motion/Motion";
 import { getLocations } from "@/lib/content";
 import { DAY_LABELS, formatTime } from "@/lib/hours";
+import { telHref } from "@/lib/links";
 
 /**
- * Interim homepage (Phase 0 skeleton): real brand, real NAP, real Toast
+ * Interim homepage (Phase 0/1 skeleton): real brand, real NAP, real Toast
  * links — a shippable single page until the full DESIGN_SPEC homepage
  * lands in Phase 3.
  */
@@ -13,7 +15,7 @@ export default function HomePage() {
 
   return (
     <>
-      <header className="bg-cream px-4 pt-12 pb-8 text-center sm:pt-16">
+      <section className="bg-cream px-4 pt-12 pb-8 text-center sm:pt-16">
         <p className="text-sm tracking-widest uppercase text-terra-text">
           Taqueria · Est. 2001
         </p>
@@ -24,43 +26,45 @@ export default function HomePage() {
           Three brothers. One kitchen. Authentic Mexican food across metro
           Atlanta since 2001.
         </p>
-      </header>
+      </section>
 
       <main className="mx-auto max-w-5xl px-4 pb-16">
-        <section aria-labelledby="locations-heading">
+        <section aria-labelledby="locations-heading" id="locations">
           <h2
             id="locations-heading"
-            className="font-display text-center text-[length:var(--text-display-md)]"
+            className="font-display scroll-mt-20 text-center text-[length:var(--text-display-md)]"
           >
             Order from your taqueria
           </h2>
 
           <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {locations.map((location) => (
-              <li
-                key={location.slug}
-                className="flex flex-col rounded-lg border border-cream-dark bg-white p-5 shadow-sm"
-              >
-                <h3 className="font-display text-xl">{location.name}</h3>
-                <address className="mt-2 text-sm not-italic leading-relaxed text-charcoal-soft">
-                  {location.address.street}
-                  <br />
-                  {location.address.city}, {location.address.state}{" "}
-                  {location.address.zip}
-                </address>
-                <a
-                  className="mt-2 inline-block min-h-11 content-center text-sm font-medium text-terra-text underline-offset-2 hover:underline"
-                  href={`tel:+1-${location.phone}`}
+            {locations.map((location, index) => (
+              <li key={location.slug} className="flex">
+                <FadeIn
+                  delay={Math.min(index * 0.05, 0.2)}
+                  className="flex w-full flex-col rounded-lg border border-cream-dark bg-white p-5 shadow-sm"
                 >
-                  {location.phone}
-                </a>
-                <a
-                  className="bg-cta mt-auto inline-flex min-h-12 items-center justify-center rounded-md px-5 font-semibold text-white transition-opacity duration-[var(--duration-micro)] hover:opacity-90"
-                  href={location.toastUrl}
-                >
-                  Order online
-                  <span className="sr-only"> from {location.name}</span>
-                </a>
+                  <h3 className="font-display text-xl">{location.name}</h3>
+                  <address className="mt-2 text-sm not-italic leading-relaxed text-charcoal-soft">
+                    {location.address.street}
+                    <br />
+                    {location.address.city}, {location.address.state}{" "}
+                    {location.address.zip}
+                  </address>
+                  <a
+                    className="mt-2 inline-block min-h-11 content-center text-sm font-medium text-terra-text underline-offset-2 hover:underline"
+                    href={telHref(location)}
+                  >
+                    {location.phone}
+                  </a>
+                  <a
+                    className="bg-cta mt-auto inline-flex min-h-12 items-center justify-center rounded-md px-5 font-semibold text-white transition-opacity duration-[var(--duration-micro)] hover:opacity-90"
+                    href={location.toastUrl}
+                  >
+                    Order online
+                    <span className="sr-only"> from {location.name}</span>
+                  </a>
+                </FadeIn>
               </li>
             ))}
           </ul>
@@ -104,16 +108,6 @@ export default function HomePage() {
           </section>
         )}
       </main>
-
-      <footer className="bg-charcoal px-4 py-10 text-cream">
-        <div className="mx-auto max-w-5xl text-center text-sm leading-relaxed">
-          <p className="font-display text-lg">Taqueria Los Hermanos</p>
-          <p className="mt-2">
-            Family-owned since 2001 · Tucker · Lilburn · Suwanee ·
-            Lawrenceville · Dunwoody
-          </p>
-        </div>
-      </footer>
     </>
   );
 }
