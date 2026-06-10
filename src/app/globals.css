@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — single source of truth (CLAUDE.md "Design system").
+ * Never use raw hex values in markup; reference these tokens.
+ */
+@theme {
+  /* Palette */
+  --color-cream: #faf3e7;
+  --color-terra: #c8552d; /* graphics + large display text only (3.97:1 on cream) */
+  --color-terra-text: #b04a24; /* terra for body/small text — 4.9:1 on cream, 5.4:1 on white */
+  --color-cta: #8c2b1e; /* deep adobo red — PRIMARY CTAs ONLY */
+  --color-charcoal: #2b2420;
+  --color-gold: #d9a441;
+
+  /* Derived surfaces */
+  --color-cream-dark: #f1e6d2;
+  --color-charcoal-soft: #4a4138;
+
+  /* Typography (families wired via next/font variables in layout.tsx) */
+  --font-display: var(--font-display-face), Georgia, serif;
+  --font-sans: var(--font-sans-face), system-ui, sans-serif;
+
+  /* Fluid type scale */
+  --text-display-xl: clamp(2.25rem, 5vw + 1rem, 4rem);
+  --text-display-lg: clamp(1.75rem, 3.5vw + 0.75rem, 2.75rem);
+  --text-display-md: clamp(1.375rem, 2vw + 0.75rem, 1.875rem);
+
+  /* Motion */
+  --duration-micro: 180ms;
+  --duration-reveal: 350ms;
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* z-index scale (CLAUDE.md): content 0, sticky 10, drawer 20, modal 30, toast 40 */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-cream text-charcoal font-sans antialiased;
+  }
+
+  /* Visible focus ring, on-brand (never removed without replacement) */
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}

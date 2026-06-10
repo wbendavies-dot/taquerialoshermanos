@@ -1,0 +1,114 @@
+{
+  "locations": [
+    {
+      "slug": "tucker",
+      "name": "Tucker",
+      "address": {
+        "street": "4418 Hugh Howell Rd # B3",
+        "city": "Tucker",
+        "state": "GA",
+        "zip": "30084"
+      },
+      "phone": "678-937-0660",
+      "toastUrl": "https://order.toasttab.com/online/taqueria-los-hermanos-tucker-new-4418-hugh-howell-rd-ste-b-3",
+      "hours": {
+        "sun": { "open": "11:30", "close": "21:00" },
+        "mon": { "open": "11:00", "close": "21:00" },
+        "tue": { "open": "11:00", "close": "21:00" },
+        "wed": { "open": "11:00", "close": "21:00" },
+        "thu": { "open": "11:00", "close": "21:00" },
+        "fri": { "open": "11:00", "close": "22:00" },
+        "sat": { "open": "11:00", "close": "22:00" }
+      },
+      "holidayOverrides": []
+    },
+    {
+      "slug": "lilburn",
+      "name": "Lilburn",
+      "address": {
+        "street": "4774 Lawrenceville Hwy",
+        "city": "Lilburn",
+        "state": "GA",
+        "zip": "30047"
+      },
+      "phone": "678-380-3727",
+      "toastUrl": "https://www.toasttab.com/taqueria-los-hermanos-lilburn-4774-lawrenceville-hwy-ga",
+      "hours": {
+        "sun": { "open": "11:30", "close": "21:00" },
+        "mon": { "open": "11:00", "close": "21:00" },
+        "tue": { "open": "11:00", "close": "21:00" },
+        "wed": { "open": "11:00", "close": "21:00" },
+        "thu": { "open": "11:00", "close": "21:00" },
+        "fri": { "open": "11:00", "close": "22:00" },
+        "sat": { "open": "11:00", "close": "22:00" }
+      },
+      "holidayOverrides": []
+    },
+    {
+      "slug": "suwanee",
+      "name": "Suwanee",
+      "address": {
+        "street": "3245 Peachtree Pkwy # I",
+        "city": "Suwanee",
+        "state": "GA",
+        "zip": "30024"
+      },
+      "phone": "678-600-8322",
+      "toastUrl": "https://www.toasttab.com/taqueria-los-hermanos-suwanee-3245-peachtree-pkwy-ste-15",
+      "hours": {
+        "sun": { "open": "11:30", "close": "21:00" },
+        "mon": { "open": "11:00", "close": "21:00" },
+        "tue": { "open": "11:00", "close": "21:00" },
+        "wed": { "open": "11:00", "close": "21:00" },
+        "thu": { "open": "11:00", "close": "21:00" },
+        "fri": { "open": "11:00", "close": "22:00" },
+        "sat": { "open": "11:00", "close": "22:00" }
+      },
+      "holidayOverrides": []
+    },
+    {
+      "slug": "lawrenceville",
+      "name": "Lawrenceville",
+      "address": {
+        "street": "4955 Sugarloaf Pkwy Ste 122",
+        "city": "Lawrenceville",
+        "state": "GA",
+        "zip": "30044"
+      },
+      "phone": "770-817-0363",
+      "toastUrl": "https://order.toasttab.com/online/taqueria-los-hermanos-lawrenceville-4955-sugarloaf-pkwy-ste-122",
+      "hours": {
+        "sun": { "open": "11:30", "close": "21:00" },
+        "mon": { "open": "11:00", "close": "21:00" },
+        "tue": { "open": "11:00", "close": "21:00" },
+        "wed": { "open": "11:00", "close": "21:00" },
+        "thu": { "open": "11:00", "close": "21:00" },
+        "fri": { "open": "11:00", "close": "22:00" },
+        "sat": { "open": "11:00", "close": "22:00" }
+      },
+      "holidayOverrides": []
+    },
+    {
+      "slug": "dunwoody",
+      "name": "Dunwoody",
+      "address": {
+        "street": "5500 Chamblee Dunwoody Rd STE 3",
+        "city": "Dunwoody",
+        "state": "GA",
+        "zip": "30338"
+      },
+      "phone": "678-395-5171",
+      "toastUrl": "https://order.toasttab.com/online/taqueria-los-hermanos-dunwoody-new-5500-chamblee-dunwoody-rd-ste-3",
+      "hours": {
+        "sun": { "open": "11:30", "close": "21:00" },
+        "mon": { "open": "11:00", "close": "21:00" },
+        "tue": { "open": "11:00", "close": "21:00" },
+        "wed": { "open": "11:00", "close": "21:00" },
+        "thu": { "open": "11:00", "close": "21:00" },
+        "fri": { "open": "11:00", "close": "22:00" },
+        "sat": { "open": "11:00", "close": "22:00" }
+      },
+      "holidayOverrides": []
+    }
+  ]
+}
