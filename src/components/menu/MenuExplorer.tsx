@@ -204,7 +204,14 @@ export function MenuExplorer({
                 className="flex flex-col rounded-lg border border-cream-dark bg-white p-4"
               >
                 <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="font-semibold">{item.name}</h3>
+                  <h3 className="font-semibold">
+                    {item.name}
+                    {item.popular && (
+                      <span className="ml-2 rounded-full bg-gold/20 px-2 py-0.5 align-middle text-xs font-medium whitespace-nowrap text-charcoal">
+                        ★ Lo más pedido
+                      </span>
+                    )}
+                  </h3>
                   <p className="shrink-0 font-semibold">
                     {item.priceFrom && (
                       <span className="text-xs font-normal text-charcoal-soft">

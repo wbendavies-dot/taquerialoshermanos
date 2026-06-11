@@ -1,13 +1,12 @@
-import { expect, test } from "@playwright/test";
+﻿import { expect, test } from "@playwright/test";
 
 import locationsJson from "../src/content/locations.json";
 import menuJson from "../src/content/menu.json";
+import { menuSchema } from "../src/content/schema";
 
-const categoryCount = menuJson.categories.length;
-const itemCount = menuJson.categories.reduce(
-  (n, c) => n + c.items.length,
-  0,
-);
+const menu = menuSchema.parse(menuJson);
+const categoryCount = menu.categories.length;
+const itemCount = menu.categories.reduce((n, c) => n + c.items.length, 0);
 
 test.describe("menu page", () => {
   test("server-rendered HTML contains every category and priced item (SEO)", async ({
@@ -17,7 +16,7 @@ test.describe("menu page", () => {
     expect(response.status()).toBe(200);
     const html = await response.text();
 
-    for (const category of menuJson.categories) {
+    for (const category of menu.categories) {
       expect(html).toContain(category.name);
     }
     // Spot-check items across the menu, including prices.
@@ -34,7 +33,7 @@ test.describe("menu page", () => {
       page.getByRole("heading", { level: 1, name: "The Menu" }),
     ).toBeVisible();
     // One section heading per category.
-    for (const category of menuJson.categories) {
+    for (const category of menu.categories) {
       await expect(
         page.getByRole("heading", { level: 2, name: category.name }),
       ).toBeAttached();
@@ -59,7 +58,7 @@ test.describe("menu page", () => {
     await expect(page.getByText("Veggie Fajitas")).toBeVisible();
     await expect(page.getByText("Asada Taco", { exact: true })).toBeHidden();
 
-    const expected = menuJson.categories.reduce(
+    const expected = menu.categories.reduce(
       (n, c) =>
         n + c.items.filter((i) => i.dietary?.includes("vegetarian")).length,
       0,
@@ -130,3 +129,4 @@ test.describe("menu page", () => {
   });
 
 });
+

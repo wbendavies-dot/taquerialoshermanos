@@ -66,6 +66,20 @@ export function getSpecials(): Special[] {
   return parsedSpecials.specials;
 }
 
+/**
+ * Homepage "Lo más pedido": ranked popular items (owner-provided
+ * bestseller list). Falls back gracefully if items are retired.
+ */
+export function getPopularItems(limit = 6) {
+  return parsedMenu.categories
+    .flatMap((category) =>
+      category.items.map((item) => ({ ...item, categorySlug: category.slug })),
+    )
+    .filter((item) => item.popular && item.popularRank !== undefined)
+    .sort((a, b) => (a.popularRank ?? 99) - (b.popularRank ?? 99))
+    .slice(0, limit);
+}
+
 /** Resolve an item's price for a location (per-location overrides win). */
 export function priceFor(
   item: { price: number; priceOverrides: Record<string, number> },

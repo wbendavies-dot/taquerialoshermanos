@@ -77,6 +77,9 @@ export const menuItemSchema = z.object({
   /** 0 = not spicy … 3 = hottest. */
   spice: z.number().int().min(0).max(3).default(0),
   popular: z.boolean().default(false),
+  /** Homepage "Lo más pedido" ordering; popular items without a rank get
+      a menu badge but don't appear on the homepage. */
+  popularRank: z.number().int().positive().optional(),
 });
 
 export const menuCategorySchema = z.object({
@@ -116,6 +119,16 @@ export const siteSchema = z.object({
       expiresOn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     })
     .nullable(),
+  /** Interim catering contact (replaced by the Phase 4 form pipeline). */
+  catering: z.object({
+    email: z.string().email(),
+    phones: z.array(
+      z.object({
+        name: z.string().min(1),
+        phone: z.string().regex(/^\d{3}-\d{3}-\d{4}$/),
+      }),
+    ),
+  }),
 });
 
 export type DayHours = z.infer<typeof dayHoursSchema>;

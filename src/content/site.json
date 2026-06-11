@@ -4,5 +4,12 @@
     "lilburn": "https://www.facebook.com/Taqueria-Los-Hermanos-Lilburn-512778895754770/",
     "lawrenceville": "http://www.facebook.com/taquerialshermanossugarloaf"
   },
-  "announcement": null
+  "announcement": null,
+  "catering": {
+    "email": "Taquerialoshermanoscatering@gmail.com",
+    "phones": [
+      { "name": "Miguel", "phone": "404-993-8037" },
+      { "name": "Christian", "phone": "678-447-1094" }
+    ]
+  }
 }
