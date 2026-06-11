@@ -180,10 +180,10 @@ export default function HomePage() {
                     around.
                   </p>
                   <Link
-                    href="/nuestra-historia"
+                    href="/about-us"
                     className="mt-4 inline-flex min-h-11 items-center font-semibold text-terra-text underline-offset-2 hover:underline"
                   >
-                    Nuestra historia →
+                    About us →
                   </Link>
                 </div>
               </FadeIn>

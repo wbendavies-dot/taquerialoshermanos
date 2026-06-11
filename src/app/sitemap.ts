@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/menu",
     "/catering",
     "/locations",
-    "/nuestra-historia",
+    "/about-us",
   ].map((path) => ({
     url: `${BASE}${path}`,
     changeFrequency: "weekly" as const,

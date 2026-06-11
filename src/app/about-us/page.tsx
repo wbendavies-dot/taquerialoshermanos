@@ -8,7 +8,7 @@ import dunwoodyExterior from "@/assets/images/location-dunwoody-exterior.jpg";
 import { FadeIn } from "@/components/motion/Motion";
 
 export const metadata: Metadata = {
-  title: "Nuestra Historia | Taqueria Los Hermanos | Metro Atlanta, GA",
+  title: "About Us | Taqueria Los Hermanos | Metro Atlanta, GA",
   description:
     "Three brothers — Miguel, Roel and Raul — opened Taqueria Los Hermanos in 2001 with recipes from Mexico's southwestern coast. Twenty-five years and five metro Atlanta taquerias later, it's still all family.",
 };
@@ -21,7 +21,7 @@ export default function StoryPage() {
           Est. 2001 · Metro Atlanta
         </p>
         <h1 className="font-display mt-2 text-[length:var(--text-display-xl)] leading-tight">
-          Nuestra Historia
+          About Us
         </h1>
         <p className="font-display mt-3 text-xl text-charcoal-soft">
           Three brothers. One kitchen. Twenty-five years.

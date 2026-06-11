@@ -111,11 +111,11 @@ test.describe("location pages", () => {
   });
 });
 
-test.describe("nuestra historia", () => {
+test.describe("about us", () => {
   test("tells the owner-provided origin story", async ({ page }) => {
-    await page.goto("/nuestra-historia");
+    await page.goto("/about-us");
     await expect(
-      page.getByRole("heading", { name: "Nuestra Historia" }),
+      page.getByRole("heading", { name: "About Us" }),
     ).toBeVisible();
     await expect(
       page.getByText(/Miguel, Roel and Raul/),
@@ -136,7 +136,7 @@ test.describe("site navigation", () => {
     const response = await request.get("/sitemap.xml");
     expect(response.status()).toBe(200);
     const xml = await response.text();
-    for (const path of ["/menu", "/catering", "/nuestra-historia"]) {
+    for (const path of ["/menu", "/catering", "/about-us"]) {
       expect(xml).toContain(path);
     }
     for (const location of locationsJson.locations) {
@@ -158,8 +158,8 @@ test.describe("site navigation", () => {
       drawer.getByRole("link", { name: "Catering" }),
     ).toHaveAttribute("href", "/catering");
 
-    await drawer.getByRole("link", { name: "Nuestra Historia" }).click();
-    await expect(page).toHaveURL(/nuestra-historia/);
+    await drawer.getByRole("link", { name: "About Us" }).click();
+    await expect(page).toHaveURL(/about-us/);
     await expect(drawer).toBeHidden();
   });
 
@@ -171,7 +171,7 @@ test.describe("site navigation", () => {
       ["Menu", "/menu"],
       ["Catering", "/catering"],
       ["Locations", "/locations"],
-      ["Nuestra Historia", "/nuestra-historia"],
+      ["About Us", "/about-us"],
     ] as const) {
       await expect(nav.getByRole("link", { name: label })).toHaveAttribute(
         "href",
