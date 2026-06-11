@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import brandAward from "@/assets/images/brand-award.jpg";
+import legacyBanner from "@/assets/images/brand-legacy-banner-814x124.avif";
 import dunwoodyExterior from "@/assets/images/location-dunwoody-exterior.jpg";
 import { FadeIn } from "@/components/motion/Motion";
 
@@ -43,6 +44,23 @@ export default function StoryPage() {
           Georgian and Southern Californian cuisine.
         </p>
       </section>
+
+      {/* The original banner — kept exactly as it was painted */}
+      <FadeIn>
+        <figure className="mx-auto mt-10 max-w-2xl">
+          <Image
+            src={legacyBanner}
+            alt="The original hand-painted Los Hermanos banner: the three-brothers logo between serape stripes, reading “Specializing in Quality Since 2000”"
+            sizes="(min-width: 768px) 672px, 100vw"
+            className="w-full"
+          />
+          <figcaption className="mt-3 text-center text-sm text-charcoal-soft">
+            The banner that headed our very first website — serape
+            stripes, three brothers and all. Some things don&rsquo;t need a
+            redesign.
+          </figcaption>
+        </figure>
+      </FadeIn>
 
       <div className="relative mt-10 aspect-[3/2] overflow-hidden rounded-xl">
         <Image

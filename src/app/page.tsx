@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import drinksLoteria from "@/assets/images/drinks-loteria.jpg";
 import brandAward from "@/assets/images/brand-award.jpg";
+import legacyBanner from "@/assets/images/brand-legacy-banner-814x124.avif";
 import foodStreetTacos from "@/assets/images/food-street-tacos.jpg";
 import foodTacoSalad from "@/assets/images/food-taco-salad.jpg";
 import foodTilapia from "@/assets/images/food-tilapia.jpg";
@@ -148,6 +149,12 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn from="left" delay={0.1}>
               <div className="text-center md:text-left">
+                <Image
+                  src={legacyBanner}
+                  alt="The original hand-painted Los Hermanos banner — “Specializing in Quality Since 2000”"
+                  sizes="320px"
+                  className="mx-auto mb-4 w-full max-w-xs md:mx-0"
+                />
                 <h2
                   id="story-heading"
                   className="font-display text-[length:var(--text-display-md)]"

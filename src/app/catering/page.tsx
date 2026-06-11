@@ -38,7 +38,7 @@ function faqJsonLd(minimumGuests: number, noticeHours: number) {
         name: "How much notice do you need?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: `Please give us at least ${noticeHours} hours notice for any catering order.`,
+          text: `Please give us at least ${noticeHours} hours' notice for any catering order.`,
         },
       },
       {
@@ -98,7 +98,7 @@ export default function CateringPage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-charcoal-soft">
-              Please allow at least {catering.noticeHours} hours notice for
+              Please allow at least {catering.noticeHours} hours&rsquo; notice for
               any catering order.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function CateringPage() {
               ],
               [
                 "How much notice do you need?",
-                `Please give us at least ${catering.noticeHours} hours notice for any catering order.`,
+                `Please give us at least ${catering.noticeHours} hours' notice for any catering order.`,
               ],
               [
                 "Are drinks served with ice and cups?",

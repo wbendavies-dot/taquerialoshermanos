@@ -9,7 +9,7 @@
         { "id": "bean-dip", "name": "Bean Dip", "description": "Cheese dip mixed with refried black beans.", "price": 9.0, "toastCategory": "Appetizers" },
         { "id": "choriqueso", "name": "Choriqueso", "description": "Cheese dip mixed with grilled chorizo and pico de gallo.", "price": 11.0, "toastCategory": "Appetizers" },
         { "id": "botana-palapa", "name": "Botana Palapa", "description": "Bowl of cheese dip mixed with grilled shrimp, chicken, steak and sautéed spinach", "price": 15.0, "toastCategory": "Appetizers" },
-        { "id": "beef-dip", "name": "Beef Dip", "description": "Bowl of cheese dip and with ground beef", "price": 11.0, "toastCategory": "Appetizers" },
+        { "id": "beef-dip", "name": "Beef Dip", "description": "Bowl of cheese dip with ground beef", "price": 11.0, "toastCategory": "Appetizers" },
         { "id": "chiles-toreados", "name": "Chiles Toreados", "price": 6.25, "spice": 2, "toastCategory": "Appetizers" },
         { "id": "elote", "name": "Elote", "price": 4.95, "dietary": ["vegetarian"], "toastCategory": "Appetizers" }
       ]
@@ -150,7 +150,7 @@
       "slug": "tortas",
       "name": "Tortas (Mexican Sandwiches)",
       "items": [
-        { "id": "pastor-torta", "name": "Pastor Torta", "description": "Grilled marinated pork, layered sliced avocado, tomato, onions, refried black beans, sour cream, and lettuce and melted cheese served on Mexican bread with french fries on the side", "price": 13.5, "toastCategory": "Tortas (Mexican Sandwiches)" },
+        { "id": "pastor-torta", "name": "Pastor Torta", "description": "Grilled marinated pork, layered sliced avocado, tomato, onions, refried black beans, sour cream, lettuce and melted cheese served on Mexican bread with french fries on the side", "price": 13.5, "toastCategory": "Tortas (Mexican Sandwiches)" },
         { "id": "asada-torta", "name": "Asada Torta", "description": "Grilled seasoned Angus steak, layered sliced avocado, tomato, onions, refried black beans, sour cream, lettuce and melted cheese served on Mexican bread with french fries on the side", "price": 14.5, "toastCategory": "Tortas (Mexican Sandwiches)" },
         { "id": "pollo-torta", "name": "Pollo Torta", "description": "Grilled marinated chicken breast, layered sliced avocado, tomato, onions, refried black beans, sour cream, lettuce and melted cheese served on Mexican bread with french fries on the side", "price": 13.5, "toastCategory": "Tortas (Mexican Sandwiches)" }
       ]
@@ -160,7 +160,7 @@
       "name": "Taquitos (Flautas)",
       "items": [
         { "id": "pollo-taquitos", "name": "Pollo Taquitos", "description": "Three deep-fried and rolled flour tortillas filled with seasoned chicken over refried black beans topped with lettuce, sliced avocado, tomatoes, onions, sour cream and queso fresco", "price": 15.5, "toastCategory": "Taquitos (Flautas)" },
-        { "id": "brisket-taquitos", "name": "Brisket Taquitos", "description": "Three deep-fried and rolled corn tortillas filled with tender and smoked beef brisket served with spring mix salad, avocado slices, sour cream, refried black beans and lite spicy chipotle sauce on the side", "price": 16.5, "spice": 1, "toastCategory": "Taquitos (Flautas)" }
+        { "id": "brisket-taquitos", "name": "Brisket Taquitos", "description": "Three deep-fried and rolled corn tortillas filled with tender and smoked beef brisket served with spring mix salad, avocado slices, sour cream, refried black beans and light spicy chipotle sauce on the side", "price": 16.5, "spice": 1, "toastCategory": "Taquitos (Flautas)" }
       ]
     },
     {
@@ -179,7 +179,7 @@
       "slug": "vegetarian",
       "name": "Vegetarian Options",
       "items": [
-        { "id": "fajita-veggie-quesadilla", "name": "Fajita Veggie Quesadilla", "description": "Grilled celery, mushrooms, spinach, carrots, zucchini, and shredded cheese in two flour tortilla served with guacamole, lettuce, sour cream and pico de gallo on the side", "price": 16.0, "dietary": ["vegetarian"], "toastCategory": "Vegetarian Options" },
+        { "id": "fajita-veggie-quesadilla", "name": "Fajita Veggie Quesadilla", "description": "Grilled celery, mushrooms, spinach, carrots, zucchini, and shredded cheese in two flour tortillas served with guacamole, lettuce, sour cream and pico de gallo on the side", "price": 16.0, "dietary": ["vegetarian"], "toastCategory": "Vegetarian Options" },
         { "id": "enchiladas-con-vegetales", "name": "Enchiladas Con Vegetales", "description": "Two corn tortillas filled with grilled celery, mushrooms, spinach, carrots, zucchini, topped with melted cheese and tomato sauce served with vegetable white rice and refried black beans on the side", "price": 16.0, "dietary": ["vegetarian"], "toastCategory": "Vegetarian Options" },
         { "id": "veggie-fajitas", "name": "Veggie Fajitas", "description": "Grilled bell peppers, onions, mushrooms, spinach, carrots, zucchini, served with vegetable white rice, refried black beans, sour cream, pico de gallo, guacamole and tortillas", "price": 16.0, "dietary": ["vegetarian"], "toastCategory": "Vegetarian Options" }
       ]
@@ -206,7 +206,7 @@
         { "id": "enchiladas-de-cesina", "name": "Enchiladas De Cesina", "description": "Grilled shredded Angus steak seasoned with citrus juices, chopped onions and cilantro in two enchiladas topped with creamy avocado salsa, cabbage, radishes and grilled onions served with sautéed green beans, white rice and pico de gallo on the side", "price": 16.95, "toastCategory": "Chef's Specials" },
         { "id": "brisket-tamales", "name": "Brisket Tamales", "description": "Two roasted and smoked tender beef brisket tamales served with a cup of lentil soup and sautéed spinach on the side", "price": 19.5, "popular": true, "popularRank": 1, "toastCategory": "Chef's Specials" },
         { "id": "chicken-chile-relleno", "name": "Chicken Chile Relleno", "description": "One egg-dipped fried light spicy poblano pepper stuffed with seasoned grilled chicken breast and cheese in a delicious creamy sauce seasoned with onions, tomatoes and chef's spices served with refried black beans, Mexican rice and flour tortillas", "price": 19.5, "spice": 1, "toastCategory": "Chef's Specials" },
-        { "id": "dona-meches-tamales", "name": "Dona Meche's Tamales", "description": "Mama's original recipe. One spicy red chicken tamale and one spicy green pork tamale served with Mexican rice and a cup of black charro beans soup on the side", "price": 19.5, "spice": 2, "toastCategory": "Chef's Specials" },
+        { "id": "dona-meches-tamales", "name": "Doña Meche's Tamales", "description": "Mama's original recipe. One spicy red chicken tamale and one spicy green pork tamale served with Mexican rice and a cup of black charro beans soup on the side", "price": 19.5, "spice": 2, "toastCategory": "Chef's Specials" },
         { "id": "burrito-acapulqueno", "name": "Burrito Acapulqueño", "description": "Grilled seasoned tilapia filet, shrimp, scallops, calamari, grilled onions and bell peppers stuffed in a large flour tortilla topped with roasted poblano pepper creamy sauce served with grilled asparagus and Mexican rice on the side", "price": 23.95, "toastCategory": "Chef's Specials" },
         { "id": "molcajete", "name": "Molcajete", "description": "Grilled chicken breast, shrimp, chorizo, seasoned Angus steak, panela cheese, nopal leaf, poblano pepper and grilled onions in a molcajete with roasted tomato salsa served with Mexican rice, charro beans, soft flour or corn tortillas, guacamole and pico de gallo", "price": 37.5, "toastCategory": "Chef's Specials" },
         { "id": "pollo-cuatro-estaciones", "name": "Pollo Cuatro Estaciones", "description": "Grilled marinated chicken breast sautéed with artichoke hearts, black Kalamata olives, mushrooms and asparagus served with sautéed spinach, roasted potatoes and pico de gallo on the side", "price": 17.95, "toastCategory": "Chef's Specials" },
@@ -239,7 +239,7 @@
       "name": "Combinations",
       "items": [
         { "id": "tacos-de-salmon", "name": "Tacos De Salmon", "description": "Two grilled salmon filet tacos in a flour tortilla with grilled bell peppers, onions, tartar sauce and shredded cabbage served with Mexican rice on the side", "price": 17.5, "toastCategory": "Combinations" },
-        { "id": "platillo-dorado", "name": "Platillo Dorado", "description": "Two tacos made with deep-fried shrimp, lettuce, pico de gallo and honey-chili sauce in a soft flour tortilla served with Mexican rice and one cup of shrimp corn chowder on the side", "price": 17.5, "toastCategory": "Combinations" },
+        { "id": "platillo-dorado", "name": "Platillo Dorado", "description": "Two tacos made with deep-fried shrimp, lettuce, pico de gallo and honey-chile sauce in a soft flour tortilla served with Mexican rice and one cup of shrimp corn chowder on the side", "price": 17.5, "toastCategory": "Combinations" },
         { "id": "enchiladas-de-mole", "name": "Enchiladas De Mole", "description": "Two grilled lime marinated chicken breast enchiladas topped with homemade light spicy mole sauce, queso fresco and sour cream served with sautéed green beans, Mexican rice and pico de gallo on the side", "price": 18.5, "spice": 1, "toastCategory": "Combinations" },
         { "id": "brisket-enchiladas", "name": "Brisket Enchiladas", "description": "Two roasted and smoked tender beef brisket enchiladas in light spicy red wine chipotle pepper sauce topped with grilled onions and queso fresco served with sautéed green beans, Mexican rice and pico de gallo on the side", "price": 19.5, "spice": 1, "toastCategory": "Combinations" },
         { "id": "enchiladas-chipotle", "name": "Enchiladas Chipotle", "description": "Two corn tortillas filled with grilled marinated chicken breast topped with light spicy creamy chipotle pepper sauce, grilled onions and queso fresco served with sautéed green beans and Mexican rice on the side", "price": 18.5, "spice": 1, "toastCategory": "Combinations" },
@@ -285,7 +285,7 @@
       "slug": "postres",
       "name": "Postres (Desserts)",
       "items": [
-        { "id": "pastel-de-tres-leches", "name": "Pastel De Tres Leches", "description": "Our signature cake. A three milk sponge cake iced with whipped cream topped with mixed seasonal fruits. Whole dessert available. (24-48 hours notice required)", "price": 6.5, "toastCategory": "Postres (Homemade Style Desserts)" },
+        { "id": "pastel-de-tres-leches", "name": "Pastel De Tres Leches", "description": "Our signature cake. A three milk sponge cake iced with whipped cream topped with mixed seasonal fruits. Whole dessert available. (24-48 hours' notice required)", "price": 6.5, "toastCategory": "Postres (Homemade Style Desserts)" },
         { "id": "flan", "name": "Flan", "description": "Please ask us about our special flan of the day", "price": 6.5, "toastCategory": "Postres (Homemade Style Desserts)" },
         { "id": "sopapilla", "name": "Sopapilla", "description": "A deep-fried flour tortilla topped with honey", "price": 6.5, "toastCategory": "Postres (Homemade Style Desserts)" },
         { "id": "churros", "name": "Churros", "price": 6.5, "toastCategory": "Postres (Homemade Style Desserts)" },
