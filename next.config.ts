@@ -8,7 +8,7 @@ import type { NextConfig } from "next";
  *   /online-order   -> /         (order modal lives on every page)
  */
 const legacyRedirects = [
-  { source: "/menu-1", destination: "/", permanent: true },
+  { source: "/menu-1", destination: "/menu", permanent: true },
   { source: "/copy-of-menu", destination: "/", permanent: true },
   { source: "/online-order", destination: "/", permanent: true },
 ];

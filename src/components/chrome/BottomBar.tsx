@@ -1,13 +1,15 @@
 "use client";
 
+import Link from "next/link";
+
 import { useSiteState } from "@/components/chrome/site-state";
 import { directionsHref, telHref } from "@/lib/links";
 
 /**
- * Mobile thumb-zone action bar (DESIGN_SPEC §7). With a remembered
- * location, Call/Directions act on it directly; otherwise they open the
- * chooser. Order goes straight to the remembered location's Toast page,
- * or opens the order dialog. (Menu joins the bar in Phase 2.)
+ * Mobile thumb-zone action bar (DESIGN_SPEC §7): Menu · Order · Call ·
+ * Directions. With a remembered location, Call/Directions act on it
+ * directly; otherwise they open the chooser. Order goes straight to the
+ * remembered location's Toast page, or opens the order dialog.
  */
 export function BottomBar() {
   const { selected, openDialog } = useSiteState();
@@ -21,6 +23,12 @@ export function BottomBar() {
       className="fixed inset-x-0 bottom-0 z-10 border-t border-cream-dark bg-cream pb-[env(safe-area-inset-bottom)] md:hidden"
     >
       <div className="flex">
+        <Link href="/menu" className={actionClass}>
+          <span aria-hidden="true" className="text-base leading-none">
+            ☰
+          </span>
+          Menu
+        </Link>
         {selected ? (
           <a href={selected.toastUrl} className={`${actionClass} text-cta`}>
             <span aria-hidden="true" className="text-base leading-none">

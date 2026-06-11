@@ -66,9 +66,11 @@ export const dietaryTagSchema = z.enum(["vegetarian", "gluten-free"]);
 export const menuItemSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   name: z.string().min(1),
-  description: z.string().min(1),
+  description: z.string().default(""),
   /** Price in USD. Per-location overrides keyed by location slug. */
   price: z.number().positive().finite(),
+  /** True when the price is a starting price (size/protein variants). */
+  priceFrom: z.boolean().default(false),
   priceOverrides: z.record(z.string(), z.number().positive().finite()).default({}),
   toastCategory: z.string().min(1),
   dietary: z.array(dietaryTagSchema).default([]),

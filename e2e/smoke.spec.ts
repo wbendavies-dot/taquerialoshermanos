@@ -41,13 +41,22 @@ test.describe("homepage", () => {
 });
 
 test.describe("legacy Wix URL redirects", () => {
-  for (const legacyPath of ["/menu-1", "/copy-of-menu", "/online-order"]) {
-    test(`${legacyPath} permanently redirects`, async ({ request }) => {
+  // Destinations are updated as their pages ship (see next.config.ts).
+  const redirectMap: Record<string, string> = {
+    "/menu-1": "/menu",
+    "/copy-of-menu": "/",
+    "/online-order": "/",
+  };
+
+  for (const [legacyPath, destination] of Object.entries(redirectMap)) {
+    test(`${legacyPath} permanently redirects to ${destination}`, async ({
+      request,
+    }) => {
       const response = await request.get(legacyPath, {
         maxRedirects: 0,
       });
       expect(response.status()).toBe(308);
-      expect(response.headers()["location"]).toBe("/");
+      expect(response.headers()["location"]).toBe(destination);
     });
   }
 });

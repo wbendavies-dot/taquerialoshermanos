@@ -10,6 +10,7 @@ import { useSiteState } from "@/components/chrome/site-state";
  * multi-page nav in Phase 2.
  */
 const NAV_LINKS: { label: string; href: string }[] = [
+  { label: "Menu", href: "/menu" },
   { label: "Locations", href: "/#locations" },
 ];
 

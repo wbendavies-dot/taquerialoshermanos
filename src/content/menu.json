@@ -1,3 +1,319 @@
 {
-  "categories": []
+  "categories": [
+    {
+      "slug": "appetizers",
+      "name": "Appetizers",
+      "items": [
+        { "id": "cheese-dip", "name": "Cheese Dip", "price": 7.0, "priceFrom": true, "toastCategory": "Appetizers" },
+        { "id": "guacamole-dip", "name": "Guacamole Dip", "price": 8.0, "priceFrom": true, "toastCategory": "Appetizers" },
+        { "id": "bean-dip", "name": "Bean Dip", "description": "Cheese dip mixed with refried black beans.", "price": 9.0, "toastCategory": "Appetizers" },
+        { "id": "choriqueso", "name": "Choriqueso", "description": "Cheese dip mixed with grilled chorizo and pico de gallo.", "price": 11.0, "toastCategory": "Appetizers" },
+        { "id": "botana-palapa", "name": "Botana Palapa", "description": "Bowl of cheese dip mixed with grilled shrimp, chicken, steak and sautéed spinach", "price": 15.0, "toastCategory": "Appetizers" },
+        { "id": "beef-dip", "name": "Beef Dip", "description": "Bowl of cheese dip and with ground beef", "price": 11.0, "toastCategory": "Appetizers" },
+        { "id": "chiles-toreados", "name": "Chiles Toreados", "price": 6.25, "spice": 2, "toastCategory": "Appetizers" },
+        { "id": "elote", "name": "Elote", "price": 4.95, "dietary": ["vegetarian"], "toastCategory": "Appetizers" }
+      ]
+    },
+    {
+      "slug": "tacos",
+      "name": "Tacos",
+      "items": [
+        { "id": "asada-taco", "name": "Asada Taco", "description": "Grilled seasoned Angus steak served with green tomatillo salsa, chopped onions and cilantro", "price": 4.5, "toastCategory": "Tacos" },
+        { "id": "beef-taco", "name": "Beef Taco", "description": "Ground beef picadillo, diced tomatoes, lettuce and shredded cheese", "price": 4.25, "toastCategory": "Tacos" },
+        { "id": "carnitas-taco", "name": "Carnitas Taco", "description": "Tender pork with onions, cilantro and green tomatillo salsa", "price": 4.25, "toastCategory": "Tacos" },
+        { "id": "cesina-taco", "name": "Cesina Taco", "description": "Grilled shredded Angus steak marinated with citrus juices and chef's spices served with a green tomatillo-avocado salsa, chopped onions, and cilantro.", "price": 4.5, "toastCategory": "Tacos" },
+        { "id": "chorizo-taco", "name": "Chorizo Taco", "description": "Grilled pork sausage, red chili-tomatillo salsa, chopped onions and cilantro", "price": 4.25, "spice": 1, "toastCategory": "Tacos" },
+        { "id": "fish-taco", "name": "Fish Taco", "description": "Breaded, deep-fried tilapia fingers with tartar sauce and a spicy roasted banana pepper-onions escabeche", "price": 4.5, "spice": 1, "toastCategory": "Tacos" },
+        { "id": "mexican-chicken-taco", "name": "Mexican Chicken Taco", "description": "Grilled chicken with green tomatillo salsa, chopped onions and cilantro", "price": 4.25, "toastCategory": "Tacos" },
+        { "id": "pastor-taco", "name": "Pastor Taco", "description": "Grilled marinated pork, pineapple, onions and cilantro with a red chili-tomatillo salsa", "price": 4.25, "spice": 1, "toastCategory": "Tacos" },
+        { "id": "philly-taco", "name": "Philly Taco", "description": "With mushrooms, onions and cheese sauce", "price": 4.5, "toastCategory": "Tacos" },
+        { "id": "pollo-taco", "name": "Pollo Taco", "description": "Breaded, deep-fried chicken strips with honey mustard, lettuce and tomatoes", "price": 4.25, "toastCategory": "Tacos" },
+        { "id": "salmon-taco", "name": "Salmon Taco", "description": "Grilled salmon filet taco with grilled bell peppers, onions, tartar sauce and shredded cabbage", "price": 4.95, "toastCategory": "Tacos" },
+        { "id": "shrimp-taco", "name": "Shrimp Taco", "description": "Grilled marinated shrimp, bell pepper and onions", "price": 4.5, "toastCategory": "Tacos" },
+        { "id": "taco-dorado", "name": "Taco Dorado", "description": "Deep fried shrimp, lettuce, pico de gallo and honey-chile sauce", "price": 4.95, "spice": 1, "toastCategory": "Tacos" },
+        { "id": "veggie-taco", "name": "Veggie Taco", "description": "Grilled celery, mushrooms, carrots, zucchini, refried black beans and shredded cheese in a soft flour tortilla", "price": 4.25, "dietary": ["vegetarian"], "toastCategory": "Tacos" },
+        { "id": "tinga-pollo-taco", "name": "Tinga Pollo Taco", "price": 4.5, "toastCategory": "Tacos" },
+        { "id": "fajita-pollo-taco", "name": "Fajita Pollo Taco", "price": 6.75, "toastCategory": "Tacos" },
+        { "id": "fajita-steak-taco", "name": "Fajita Steak Taco", "price": 7.95, "toastCategory": "Tacos" }
+      ]
+    },
+    {
+      "slug": "quesadillas",
+      "name": "Quesadillas",
+      "items": [
+        { "id": "california-quesadilla", "name": "California Quesadilla", "description": "Grilled spinach, mushrooms, onions, tomatoes and cheese in a flour tortilla", "price": 14.5, "dietary": ["vegetarian"], "toastCategory": "Quesadillas" },
+        { "id": "cheese-quesadilla", "name": "Cheese Quesadilla", "price": 7.95, "dietary": ["vegetarian"], "toastCategory": "Quesadillas" },
+        { "id": "chicken-quesadilla", "name": "Chicken Quesadilla", "price": 11.25, "toastCategory": "Quesadillas" },
+        { "id": "steak-quesadilla", "name": "Steak Quesadilla", "price": 12.25, "toastCategory": "Quesadillas" },
+        { "id": "shrimp-quesadilla", "name": "Shrimp Quesadilla", "price": 12.5, "toastCategory": "Quesadillas" },
+        { "id": "fajitas-quesadillas", "name": "Fajitas Quesadillas", "description": "Grilled with onions, bell peppers and melted cheese in two flour tortillas served with guacamole, lettuce, sour cream and pico de gallo", "price": 18.0, "toastCategory": "Quesadillas" },
+        { "id": "california-tinga", "name": "California Tinga", "price": 15.5, "toastCategory": "Quesadillas" },
+        { "id": "veggie-quesadilla", "name": "Veggie Quesadilla", "price": 11.0, "dietary": ["vegetarian"], "toastCategory": "Quesadillas" }
+      ]
+    },
+    {
+      "slug": "nachos-bowls",
+      "name": "Nachos & Bowls",
+      "items": [
+        { "id": "beef-nachos", "name": "Beef Nachos", "description": "Tortilla chips topped with cheese sauce, refried black beans and ground beef picadillo seasoned with diced bell peppers, potatoes, tomatoes, onions, and chef's spices", "price": 12.5, "toastCategory": "Nachos / Bowls" },
+        { "id": "chicken-nachos", "name": "Chicken Nachos", "description": "Tortilla chips topped with cheese sauce, grilled chicken and refried black beans", "price": 12.5, "toastCategory": "Nachos / Bowls" },
+        { "id": "steak-nachos", "name": "Steak Nachos", "description": "Tortilla chips topped with cheese sauce, grilled Angus steak and refried black beans", "price": 13.5, "toastCategory": "Nachos / Bowls" },
+        { "id": "shrimp-nachos", "name": "Shrimp Nachos", "description": "Tortilla chips topped with cheese sauce, grilled shrimp and refried black beans", "price": 13.5, "toastCategory": "Nachos / Bowls" },
+        { "id": "supreme-nachos", "name": "Supreme Nachos", "description": "Tortilla chips topped with cheese sauce and refried black beans served with lettuce, sour cream, pico de gallo and guacamole on the side", "price": 15.0, "toastCategory": "Nachos / Bowls" },
+        { "id": "half-nachos-supreme", "name": "Half Nachos Supreme", "price": 9.95, "toastCategory": "Nachos / Bowls" },
+        { "id": "fajita-nachos", "name": "Fajita Nachos", "description": "Tortilla chips topped with cheese sauce, refried black beans, grilled bell peppers, and onions", "price": 18.5, "toastCategory": "Nachos / Bowls" },
+        { "id": "supreme-fajita-nachos", "name": "Supreme Fajita Nachos", "description": "Tortilla chips topped with cheese sauce, refried black beans, grilled bell peppers, and onion with a side of sour cream, pico de gallo, guacamole", "price": 21.0, "toastCategory": "Nachos / Bowls" },
+        { "id": "no-meat-nachos", "name": "No Meat Nachos", "description": "Tortilla chips topped with cheese sauce and refried black beans", "price": 10.5, "dietary": ["vegetarian"], "toastCategory": "Nachos / Bowls" },
+        { "id": "chicken-bowl", "name": "Chicken Bowl", "description": "Rice topped with grilled chicken and cheese sauce", "price": 14.95, "toastCategory": "Nachos / Bowls" },
+        { "id": "steak-bowl", "name": "Steak Bowl", "description": "Rice topped with grilled steak and cheese sauce", "price": 15.95, "toastCategory": "Nachos / Bowls" },
+        { "id": "shrimp-bowl", "name": "Shrimp Bowl", "description": "Rice topped with grilled shrimp and cheese sauce", "price": 16.95, "toastCategory": "Nachos / Bowls" },
+        { "id": "fajita-bowl", "name": "Fajita Bowl", "description": "Rice topped with choice of fajitas and cheese sauce", "price": 17.95, "toastCategory": "Nachos / Bowls" },
+        { "id": "tinga-chicken-nachos", "name": "Tinga Chicken Nachos", "price": 13.5, "toastCategory": "Nachos / Bowls" },
+        { "id": "nachos-supreme-no-meat", "name": "Nachos Supreme No Meat", "price": 13.5, "dietary": ["vegetarian"], "toastCategory": "Nachos / Bowls" },
+        { "id": "half-nachos-no-meat", "name": "Half Nachos No Meat", "price": 7.95, "dietary": ["vegetarian"], "toastCategory": "Nachos / Bowls" },
+        { "id": "half-nachos-chicken", "name": "Half Nachos Chicken", "price": 9.25, "toastCategory": "Nachos / Bowls" },
+        { "id": "half-nachos-beef", "name": "Half Nachos Beef", "price": 9.25, "toastCategory": "Nachos / Bowls" },
+        { "id": "half-nachos-steak", "name": "Half Nachos Steak", "price": 10.25, "toastCategory": "Nachos / Bowls" }
+      ]
+    },
+    {
+      "slug": "burritos",
+      "name": "Burritos",
+      "items": [
+        { "id": "burrito-pastor", "name": "Burrito Pastor", "description": "Grilled marinated pork, onions, pineapple and cilantro topped with melted cheese and light spicy red chile sauce served with rice and refried black beans on the side", "price": 14.5, "spice": 1, "toastCategory": "Burritos" },
+        { "id": "burrito-asada", "name": "Burrito Asada", "description": "Grilled seasoned shredded Angus steak and onions topped with melted cheese and green tomatillo sauce served with rice and refried black beans on the side", "price": 16.0, "toastCategory": "Burritos" },
+        { "id": "burrito-pollo-rajas", "name": "Burrito De Pollo en Rajas", "description": "Grilled lime marinated chicken breast topped with delicious creamy sauce seasoned with poblano pepper strips, tomatoes, onions and chef's spices served with rice and refried black beans on the side", "price": 16.0, "toastCategory": "Burritos" },
+        { "id": "burrito-marisco", "name": "Burrito Marisco", "description": "Grilled marinated shrimp and crawfish with onions and bell peppers topped with roasted poblano pepper creamy sauce served with rice", "price": 17.5, "toastCategory": "Burritos" },
+        { "id": "burrito-de-lujo", "name": "Burrito De Lujo", "description": "Stuffed with ground beef picadillo topped with melted cheese, light spicy red chile sauce, lettuce, tomato and sour cream served with rice and refried black beans on the side", "price": 16.0, "spice": 1, "toastCategory": "Burritos" },
+        { "id": "burrito-frito", "name": "Burrito Frito", "description": "One large deep-fried and rolled flour tortilla filled with simmered shredded chicken breast and cheese in a light spicy chipotle sauce topped with tomato sauce, sour cream, queso fresco and lettuce. Served with Mexican rice and refried black beans on the side", "price": 16.0, "spice": 1, "toastCategory": "Burritos" },
+        { "id": "burrito-chipotle", "name": "Burrito Chipotle", "description": "Grilled lime marinated chicken breast in a burrito topped with light spicy creamy chipotle pepper sauce, queso fresco and grilled onions served with rice and refried black beans", "price": 16.0, "spice": 1, "toastCategory": "Burritos" },
+        { "id": "burrito-mole", "name": "Burrito Mole", "description": "Grilled lime marinated chicken breast in a burrito topped with homemade light spicy mole sauce, queso fresco and sour cream served with pico de gallo, refried black beans and Mexican rice on the side.", "price": 16.0, "spice": 1, "toastCategory": "Burritos" },
+        { "id": "burrito-brisket", "name": "Burrito Brisket", "description": "Roasted and smoked tender beef brisket burrito topped with light spicy red wine-chipotle pepper sauce, grilled onions and queso fresco served with refried black beans, Mexican rice and pico de gallo on the side", "price": 16.0, "spice": 1, "toastCategory": "Burritos" },
+        { "id": "burrito-supremo", "name": "Burrito Supremo", "description": "One large flour tortilla filled with Mexican rice, refried black beans, guacamole, lettuce, sour cream and pico de gallo cut in half and served with fries on the side", "price": 16.25, "dietary": ["vegetarian"], "toastCategory": "Burritos" },
+        { "id": "burrito-combo", "name": "Burrito Combo", "description": "Choice of meat topped with melted cheese and served with Mexican rice and refried black beans", "price": 12.25, "toastCategory": "Burritos" },
+        { "id": "burrito-carta-chicken", "name": "Burrito a La Carta Chicken", "price": 10.0, "toastCategory": "Burritos" },
+        { "id": "burrito-carta-asada", "name": "Burrito a La Carta Asada", "price": 11.0, "toastCategory": "Burritos" },
+        { "id": "burrito-carta-beef", "name": "Burrito Ground Beef a La Carta", "price": 10.0, "toastCategory": "Burritos" },
+        { "id": "bean-burrito-carta", "name": "Bean Burrito a La Carta", "price": 9.0, "dietary": ["vegetarian"], "toastCategory": "Burritos" }
+      ]
+    },
+    {
+      "slug": "enchiladas",
+      "name": "Enchiladas",
+      "items": [
+        { "id": "cheese-enchilada", "name": "Cheese Enchilada", "price": 4.25, "toastCategory": "Enchiladas" },
+        { "id": "chicken-enchilada", "name": "Chicken Enchilada", "price": 6.25, "toastCategory": "Enchiladas" },
+        { "id": "beef-enchilada", "name": "Beef Enchilada", "price": 6.25, "toastCategory": "Enchiladas" },
+        { "id": "veggie-enchilada", "name": "Veggie Enchilada", "price": 6.25, "dietary": ["vegetarian"], "toastCategory": "Enchiladas" },
+        { "id": "steak-enchilada", "name": "Steak Enchilada", "price": 7.25, "toastCategory": "Enchiladas" },
+        { "id": "shrimp-enchilada", "name": "Shrimp Enchilada", "price": 7.5, "toastCategory": "Enchiladas" }
+      ]
+    },
+    {
+      "slug": "ensaladas",
+      "name": "Ensaladas (Salads)",
+      "items": [
+        { "id": "cesina-arugula-salad", "name": "Cesina Arugula Salad", "description": "Arugula salad, avocado slices, roasted bell pepper strips, queso fresco and your choice of balsamic vinaigrette or extra virgin olive oil-lemon dressing.", "price": 15.5, "toastCategory": "Ensaladas (Salads)" },
+        { "id": "ensalada-de-pollo", "name": "Ensalada De Pollo", "description": "Grilled lime-marinated chicken breast over spring mix salad, diced tomatoes and your choice of ranch or balsamic vinaigrette dressing", "price": 9.95, "toastCategory": "Ensaladas (Salads)" },
+        { "id": "taco-salad", "name": "Taco Salad", "description": "A large deep-fried tortilla shell filled with refried beans, lettuce, shredded cheese, sour cream and diced tomatoes", "price": 14.5, "toastCategory": "Ensaladas (Salads)" },
+        { "id": "fajita-taco-salad-steak", "name": "Fajita Taco Salad Steak", "price": 18.25, "toastCategory": "Ensaladas (Salads)" },
+        { "id": "fajita-taco-salad-chicken", "name": "Fajitas Taco Salad Chicken", "price": 17.25, "toastCategory": "Ensaladas (Salads)" },
+        { "id": "kale-salad-chicken", "name": "Kale Salad Chicken", "price": 15.5, "toastCategory": "Ensaladas (Salads)" },
+        { "id": "kale-salad-steak", "name": "Kale Salad Steak", "price": 17.5, "toastCategory": "Ensaladas (Salads)" },
+        { "id": "kale-salad-salmon", "name": "Kale Salad Salmon", "price": 17.95, "toastCategory": "Ensaladas (Salads)" },
+        { "id": "kale-salad-shrimp", "name": "Kale Salad Shrimp", "price": 17.95, "toastCategory": "Ensaladas (Salads)" },
+        { "id": "taco-salad-no-meat", "name": "Taco Salad No Meat", "price": 13.5, "dietary": ["vegetarian"], "toastCategory": "Ensaladas (Salads)" },
+        { "id": "arugula-salad-no-meat", "name": "Arugula Salad No Meat", "price": 14.25, "dietary": ["vegetarian"], "toastCategory": "Ensaladas (Salads)" },
+        { "id": "kale-salad-no-meat", "name": "Kale Salad No Meat", "price": 12.95, "dietary": ["vegetarian"], "toastCategory": "Ensaladas (Salads)" },
+        { "id": "casa-ensalada", "name": "Casa Ensalada", "price": 5.25, "toastCategory": "Ensaladas (Salads)" }
+      ]
+    },
+    {
+      "slug": "soups",
+      "name": "Soups",
+      "items": [
+        { "id": "cup-tortilla-chicken-soup", "name": "Cup Tortilla Chicken Soup", "price": 7.0, "toastCategory": "Soups" },
+        { "id": "bowl-tortilla-chicken-soup", "name": "Bowl Tortilla Chicken Soup", "price": 9.0, "toastCategory": "Soups" },
+        { "id": "cup-charro-beans-soup", "name": "Cup Charro Beans Soup", "price": 7.0, "toastCategory": "Soups" },
+        { "id": "bowl-charro-beans-soup", "name": "Bowl Charro Beans Soup", "price": 9.0, "toastCategory": "Soups" },
+        { "id": "cup-lentil-soup", "name": "Cup Lentil Soup", "price": 7.0, "toastCategory": "Soups" },
+        { "id": "bowl-lentil-soup", "name": "Bowl Lentil Soup", "price": 9.0, "toastCategory": "Soups" },
+        { "id": "cup-shrimp-corn-chowder", "name": "Cup Shrimp Corn Chowder", "price": 8.0, "toastCategory": "Soups" },
+        { "id": "bowl-shrimp-corn-chowder", "name": "Bowl Shrimp Corn Chowder", "price": 10.0, "toastCategory": "Soups" },
+        { "id": "qt-shrimp-corn-chowder", "name": "QT Shrimp Corn Chowder", "price": 20.0, "toastCategory": "Soups" },
+        { "id": "qt-chicken-soup", "name": "QT Chicken Soup", "price": 18.0, "toastCategory": "Soups" },
+        { "id": "qt-lentil-soup", "name": "QT Lentil Soup", "price": 18.0, "toastCategory": "Soups" },
+        { "id": "qt-charro-beans-soup", "name": "QT Charro Beans Soup", "price": 18.0, "toastCategory": "Soups" }
+      ]
+    },
+    {
+      "slug": "tortas",
+      "name": "Tortas (Mexican Sandwiches)",
+      "items": [
+        { "id": "pastor-torta", "name": "Pastor Torta", "description": "Grilled marinated pork, layered sliced avocado, tomato, onions, refried black beans, sour cream, and lettuce and melted cheese served on Mexican bread with french fries on the side", "price": 13.5, "toastCategory": "Tortas (Mexican Sandwiches)" },
+        { "id": "asada-torta", "name": "Asada Torta", "description": "Grilled seasoned Angus steak, layered sliced avocado, tomato, onions, refried black beans, sour cream, lettuce and melted cheese served on Mexican bread with french fries on the side", "price": 14.5, "toastCategory": "Tortas (Mexican Sandwiches)" },
+        { "id": "pollo-torta", "name": "Pollo Torta", "description": "Grilled marinated chicken breast, layered sliced avocado, tomato, onions, refried black beans, sour cream, lettuce and melted cheese served on Mexican bread with french fries on the side", "price": 13.5, "toastCategory": "Tortas (Mexican Sandwiches)" }
+      ]
+    },
+    {
+      "slug": "taquitos",
+      "name": "Taquitos (Flautas)",
+      "items": [
+        { "id": "pollo-taquitos", "name": "Pollo Taquitos", "description": "Three deep-fried and rolled flour tortillas filled with seasoned chicken over refried black beans topped with lettuce, sliced avocado, tomatoes, onions, sour cream and queso fresco", "price": 15.5, "toastCategory": "Taquitos (Flautas)" },
+        { "id": "brisket-taquitos", "name": "Brisket Taquitos", "description": "Three deep-fried and rolled corn tortillas filled with tender and smoked beef brisket served with spring mix salad, avocado slices, sour cream, refried black beans and lite spicy chipotle sauce on the side", "price": 16.5, "spice": 1, "toastCategory": "Taquitos (Flautas)" }
+      ]
+    },
+    {
+      "slug": "tlayudas",
+      "name": "Tlayudas",
+      "items": [
+        { "id": "tlayuda-chicken", "name": "Tlayuda Chicken", "description": "A 14\" thin crunchy fried corn tortilla topped with a spread of refried black beans, shredded cabbage, avocado and tomato slices, red onions, radishes, roasted poblano pepper strips, queso fresco and shredded Oaxaca cheese", "price": 24.0, "toastCategory": "Tlayuda" },
+        { "id": "tlayuda-pastor", "name": "Tlayuda Pastor", "description": "A 14\" thin crunchy fried corn tortilla topped with a spread of refried black beans, shredded cabbage, avocado and tomato slices, red onions, radishes, roasted poblano pepper strips, queso fresco and shredded Oaxaca cheese", "price": 24.0, "toastCategory": "Tlayuda" },
+        { "id": "tlayuda-steak", "name": "Tlayuda Steak", "description": "A 14\" thin crunchy fried corn tortilla topped with a spread of refried black beans, shredded cabbage, avocado and tomato slices, red onions, radishes, roasted poblano pepper strips, queso fresco and shredded Oaxaca cheese", "price": 28.0, "toastCategory": "Tlayuda" },
+        { "id": "tlayuda-veggies", "name": "Tlayuda Veggies", "price": 24.0, "dietary": ["vegetarian"], "toastCategory": "Tlayuda" },
+        { "id": "tlayuda-no-meat", "name": "Tlayuda No Meat", "price": 20.0, "dietary": ["vegetarian"], "toastCategory": "Tlayuda" },
+        { "id": "shrimp-tlayuda", "name": "Shrimp Tlayuda", "price": 28.0, "toastCategory": "Tlayuda" }
+      ]
+    },
+    {
+      "slug": "vegetarian",
+      "name": "Vegetarian Options",
+      "items": [
+        { "id": "fajita-veggie-quesadilla", "name": "Fajita Veggie Quesadilla", "description": "Grilled celery, mushrooms, spinach, carrots, zucchini, and shredded cheese in two flour tortilla served with guacamole, lettuce, sour cream and pico de gallo on the side", "price": 16.0, "dietary": ["vegetarian"], "toastCategory": "Vegetarian Options" },
+        { "id": "enchiladas-con-vegetales", "name": "Enchiladas Con Vegetales", "description": "Two corn tortillas filled with grilled celery, mushrooms, spinach, carrots, zucchini, topped with melted cheese and tomato sauce served with vegetable white rice and refried black beans on the side", "price": 16.0, "dietary": ["vegetarian"], "toastCategory": "Vegetarian Options" },
+        { "id": "veggie-fajitas", "name": "Veggie Fajitas", "description": "Grilled bell peppers, onions, mushrooms, spinach, carrots, zucchini, served with vegetable white rice, refried black beans, sour cream, pico de gallo, guacamole and tortillas", "price": 16.0, "dietary": ["vegetarian"], "toastCategory": "Vegetarian Options" }
+      ]
+    },
+    {
+      "slug": "fajitas",
+      "name": "Fajitas",
+      "items": [
+        { "id": "fajitas", "name": "Fajitas", "description": "Grilled with onions and bell peppers, served with rice, refried black beans, sour cream, pico de gallo, guacamole and tortillas", "price": 18.5, "toastCategory": "Fajitas" },
+        { "id": "fajitas-quesadillas-fajitas", "name": "Fajitas Quesadillas", "description": "Grilled with onions, bell peppers and melted cheese in two flour tortillas served with guacamole, lettuce, sour cream and pico de gallo", "price": 18.0, "toastCategory": "Fajitas" },
+        { "id": "fajitas-x2-chicken", "name": "Fajitas x2 Chicken", "price": 35.95, "toastCategory": "Fajitas" },
+        { "id": "fajitas-x2-steak", "name": "Fajitas x2 Steak", "price": 36.95, "toastCategory": "Fajitas" },
+        { "id": "fajitas-x2-shrimp", "name": "Fajitas x2 Shrimp", "price": 36.95, "toastCategory": "Fajitas" },
+        { "id": "fajitas-x2-trio", "name": "Fajitas x2 Trio", "price": 40.0, "toastCategory": "Fajitas" }
+      ]
+    },
+    {
+      "slug": "chefs-specials",
+      "name": "Chef's Specials",
+      "items": [
+        { "id": "carne-enchilada", "name": "Carne Enchilada", "description": "Flank steak marinated in red mild chili spices served with rice and beans with a cheese enchilada topped with red sauce and cheese.", "price": 18.95, "spice": 1, "toastCategory": "Chef's Specials" },
+        { "id": "salmon-con-alcachofas", "name": "Salmon Con Alcachofas", "description": "Grilled salmon filet sautéed with artichokes and capers in a lemon-butter sauce served with sautéed spinach, roasted rosemary potatoes and pico de gallo on the side", "price": 22.5, "toastCategory": "Chef's Specials" },
+        { "id": "carnitas-michoacanas", "name": "Carnitas Michoacanas", "description": "Seasoned tender pork served with shredded lettuce, jalapeño pickles, pico de gallo, Mexican rice, refried black beans, and flour tortillas", "price": 16.95, "toastCategory": "Chef's Specials" },
+        { "id": "enchiladas-de-cesina", "name": "Enchiladas De Cesina", "description": "Grilled shredded Angus steak seasoned with citrus juices, chopped onions and cilantro in two enchiladas topped with creamy avocado salsa, cabbage, radishes and grilled onions served with sautéed green beans, white rice and pico de gallo on the side", "price": 16.95, "toastCategory": "Chef's Specials" },
+        { "id": "brisket-tamales", "name": "Brisket Tamales", "description": "Two roasted and smoked tender beef brisket tamales served with a cup of lentil soup and sautéed spinach on the side", "price": 19.5, "toastCategory": "Chef's Specials" },
+        { "id": "chicken-chile-relleno", "name": "Chicken Chile Relleno", "description": "One egg-dipped fried light spicy poblano pepper stuffed with seasoned grilled chicken breast and cheese in a delicious creamy sauce seasoned with onions, tomatoes and chef's spices served with refried black beans, Mexican rice and flour tortillas", "price": 19.5, "spice": 1, "toastCategory": "Chef's Specials" },
+        { "id": "dona-meches-tamales", "name": "Dona Meche's Tamales", "description": "Mama's original recipe. One spicy red chicken tamale and one spicy green pork tamale served with Mexican rice and a cup of black charro beans soup on the side", "price": 19.5, "spice": 2, "toastCategory": "Chef's Specials" },
+        { "id": "burrito-acapulqueno", "name": "Burrito Acapulqueño", "description": "Grilled seasoned tilapia filet, shrimp, scallops, calamari, grilled onions and bell peppers stuffed in a large flour tortilla topped with roasted poblano pepper creamy sauce served with grilled asparagus and Mexican rice on the side", "price": 23.95, "toastCategory": "Chef's Specials" },
+        { "id": "molcajete", "name": "Molcajete", "description": "Grilled chicken breast, shrimp, chorizo, seasoned Angus steak, panela cheese, nopal leaf, poblano pepper and grilled onions in a molcajete with roasted tomato salsa served with Mexican rice, charro beans, soft flour or corn tortillas, guacamole and pico de gallo", "price": 37.5, "toastCategory": "Chef's Specials" },
+        { "id": "pollo-cuatro-estaciones", "name": "Pollo Cuatro Estaciones", "description": "Grilled marinated chicken breast sautéed with artichoke hearts, black Kalamata olives, mushrooms and asparagus served with sautéed spinach, roasted potatoes and pico de gallo on the side", "price": 17.95, "toastCategory": "Chef's Specials" },
+        { "id": "res-ahumado", "name": "Res Ahumado", "description": "Roasted beef brisket sautéed in a light spicy chipotle-guajillo pepper sauce served with sautéed spinach, roasted potatoes and pico de gallo", "price": 18.25, "spice": 1, "toastCategory": "Chef's Specials" },
+        { "id": "enchiladas-suizas", "name": "Enchiladas Suizas", "description": "Two shredded chicken enchiladas with Mexican rice and green beans on the side topped with a creamy poblano sauce.", "price": 16.25, "toastCategory": "Chef's Specials" },
+        { "id": "huevos-rancheros", "name": "Huevos Rancheros", "description": "Three eggs cooked with green tomatillo sauce. Served with lettuce, tomatoes, cheese, sour cream and avocado. Rice, beans, and tortillas on the side", "price": 14.95, "dietary": ["vegetarian"], "toastCategory": "Chef's Specials" },
+        { "id": "chilaquiles-chicken", "name": "Chilaquiles Chicken", "price": 17.95, "toastCategory": "Chef's Specials" },
+        { "id": "chilaquiles-asada", "name": "Chilaquiles Asada", "price": 18.95, "toastCategory": "Chef's Specials" },
+        { "id": "bistec-a-la-mexicana", "name": "Bistec a La Mexicana", "description": "Chopped flank steak with peppers and onions sautéed in a light spicy tomato sauce.", "price": 18.25, "spice": 1, "toastCategory": "Chef's Specials" },
+        { "id": "quesadillas-de-jaiva", "name": "Quesadillas De Jaiva", "price": 18.95, "toastCategory": "Chef's Specials" },
+        { "id": "quesabirria", "name": "Quesabirria", "price": 16.5, "toastCategory": "Chef's Specials" },
+        { "id": "ensalada-de-fajitas", "name": "Ensalada De Fajitas", "description": "Arugula salad, grilled asparagus, avocado slices, pico de gallo and queso fresco drizzled with balsamic vinaigrette dressing.", "price": 14.95, "toastCategory": "Chef's Specials" },
+        { "id": "tilapia-veracruz", "name": "Tilapia Veracruz", "description": "Grilled tilapia fillet sautéed in a lemon-butter sauce served with white rice and salad with lettuce, avocado, red onions and tomatoes.", "price": 16.95, "toastCategory": "Chef's Specials" },
+        { "id": "pechuga-con-alcachofas", "name": "Pechuga Con Alcachofas", "description": "Grilled marinated chicken breast sautéed with artichokes and a light tomato sauce served with white rice, roasted potatoes and pico de gallo on the side.", "price": 16.95, "toastCategory": "Chef's Specials" },
+        { "id": "barbacoa-de-res", "name": "Barbacoa De Res", "description": "Shredded beef seasoned with light spicy red chiles sauce served with Mexican rice, charro beans soup, pico de gallo and choice of soft flour or corn tortillas.", "price": 15.95, "spice": 1, "toastCategory": "Chef's Specials" },
+        { "id": "pechuga-de-pollo-special", "name": "Pechuga De Pollo", "description": "Grilled marinated chicken breast sautéed with zucchini, onions and tomatoes served with rice on the side", "price": 16.75, "toastCategory": "Chef's Specials" },
+        { "id": "ceviche", "name": "Ceviche", "price": 15.95, "toastCategory": "Chef's Specials" },
+        { "id": "pechuga-salsa-champinones", "name": "Pechuga Salsa Champiñones", "price": 18.95, "toastCategory": "Chef's Specials" },
+        { "id": "asada-fries", "name": "Asada Fries", "price": 17.95, "toastCategory": "Chef's Specials" },
+        { "id": "pechuga-mole", "name": "Pechuga Mole", "price": 17.95, "toastCategory": "Chef's Specials" },
+        { "id": "burrito-birria", "name": "Burrito Birria", "price": 17.5, "toastCategory": "Chef's Specials" },
+        { "id": "milanesa-de-pollo", "name": "Milanesa de Pollo", "price": 18.95, "toastCategory": "Chef's Specials" },
+        { "id": "veggie-soup-cup", "name": "Veggie Soup Cup", "price": 5.95, "dietary": ["vegetarian"], "toastCategory": "Chef's Specials" },
+        { "id": "veggie-soup-bowl", "name": "Veggie Soup Bowl", "price": 7.95, "dietary": ["vegetarian"], "toastCategory": "Chef's Specials" },
+        { "id": "brisket-nachos", "name": "Brisket Nachos", "price": 17.5, "toastCategory": "Chef's Specials" }
+      ]
+    },
+    {
+      "slug": "combinations",
+      "name": "Combinations",
+      "items": [
+        { "id": "tacos-de-salmon", "name": "Tacos De Salmon", "description": "Two grilled salmon filet tacos in a flour tortilla with grilled bell peppers, onions, tartar sauce and shredded cabbage served with Mexican rice on the side", "price": 17.5, "toastCategory": "Combinations" },
+        { "id": "platillo-dorado", "name": "Platillo Dorado", "description": "Two tacos made with deep-fried shrimp, lettuce, pico de gallo and honey-chili sauce in a soft flour tortilla served with Mexican rice and one cup of shrimp corn chowder on the side", "price": 17.5, "toastCategory": "Combinations" },
+        { "id": "enchiladas-de-mole", "name": "Enchiladas De Mole", "description": "Two grilled lime marinated chicken breast enchiladas topped with homemade light spicy mole sauce, queso fresco and sour cream served with sautéed green beans, Mexican rice and pico de gallo on the side", "price": 18.5, "spice": 1, "toastCategory": "Combinations" },
+        { "id": "brisket-enchiladas", "name": "Brisket Enchiladas", "description": "Two roasted and smoked tender beef brisket enchiladas in light spicy red wine chipotle pepper sauce topped with grilled onions and queso fresco served with sautéed green beans, Mexican rice and pico de gallo on the side", "price": 19.5, "spice": 1, "toastCategory": "Combinations" },
+        { "id": "enchiladas-chipotle", "name": "Enchiladas Chipotle", "description": "Two corn tortillas filled with grilled marinated chicken breast topped with light spicy creamy chipotle pepper sauce, grilled onions and queso fresco served with sautéed green beans and Mexican rice on the side", "price": 18.5, "spice": 1, "toastCategory": "Combinations" },
+        { "id": "enchiladas-rancheras", "name": "Enchiladas Rancheras", "description": "Two corn tortillas filled with grilled marinated chicken breast topped with melted cheese, green tomatillo sauce, lettuce, tomatoes and sour cream served with rice and refried black beans", "price": 18.5, "toastCategory": "Combinations" },
+        { "id": "marisco-enchiladas", "name": "Marisco Enchiladas", "description": "Two corn tortillas filled with grilled marinated shrimp, crawfish and onions topped with roasted poblano pepper creamy sauce served with rice and a side of spring mix salad", "price": 20.5, "toastCategory": "Combinations" }
+      ]
+    },
+    {
+      "slug": "specialties",
+      "name": "Specialties",
+      "items": [
+        { "id": "pechuga-de-pollo", "name": "Pechuga De Pollo", "description": "Grilled marinated chicken breast sautéed with zucchini, onions and tomatoes served with rice on the side", "price": 16.75, "toastCategory": "Specialties" },
+        { "id": "pollo-al-cilantro", "name": "Pollo Al Cilantro", "description": "Grilled marinated chicken breast topped with cilantro-butter sauce served with pico de gallo, vegetable white rice, steamed broccoli, carrots and zucchini on the side.", "price": 18.5, "toastCategory": "Specialties" },
+        { "id": "carne-asada", "name": "Carne Asada", "description": "8 oz Angus seasoned flank steak topped with onions served with flour tortillas, rice, refried black beans, lettuce, guacamole, pico de gallo and green tomatillo salsa on the side.", "price": 22.0, "toastCategory": "Specialties" },
+        { "id": "cesina", "name": "Cesina", "description": "8 oz Angus flank steak seasoned with citrus juices and chef spices topped with grilled onions served with rice, refried black beans, and one spinach and cheese enchilada topped with melted cheese and a light spicy tomato sauce.", "price": 22.0, "toastCategory": "Specialties" },
+        { "id": "platillo-romerito-chicken", "name": "Platillo Romerito Chicken", "price": 19.0, "toastCategory": "Specialties" },
+        { "id": "platillo-romerito-steak", "name": "Platillo Romerito Steak", "price": 22.0, "toastCategory": "Specialties" }
+      ]
+    },
+    {
+      "slug": "mariscos",
+      "name": "Mariscos (Seafood)",
+      "items": [
+        { "id": "pescado", "name": "Pescado (Fish Filet)", "description": "Grilled tilapia fillet sautéed with black Kalamata olives, capers, tomatoes and oregano in a white wine sauce served with roasted potatoes and a side of spring mix salad", "price": 19.25, "toastCategory": "Mariscos/Seafood" },
+        { "id": "parrillada-de-mariscos", "name": "Parrillada De Mariscos (Mixed Grilled Seafood)", "description": "Grilled tiger shrimp, salmon filet and scallops seasoned with herbs, drizzled with extra virgin olive oil-lemon dressing and served with grilled asparagus, roasted rosemary potatoes and pico de gallo", "price": 23.95, "toastCategory": "Mariscos/Seafood" },
+        { "id": "sopa-de-mariscos", "name": "Sopa De Mariscos", "description": "Tiger shrimp, tilapia filet, calamari, scallops, clams and mussels sautéed with garlic and white wine in light spicy tomato broth served with garlic toast on the side", "price": 23.95, "spice": 1, "toastCategory": "Mariscos/Seafood" }
+      ]
+    },
+    {
+      "slug": "kids",
+      "name": "Children's Menu",
+      "items": [
+        { "id": "k-taquitos-de-pollo", "name": "K- Taquitos De Pollo", "description": "Two chicken flautas topped with cheese sauce and queso fresco served with rice", "price": 9.5, "toastCategory": "Children's Menu (Under 10, Por Favor)" },
+        { "id": "k-cheese-quesadilla", "name": "K- Cheese Quesadilla", "description": "Served with rice", "price": 7.5, "dietary": ["vegetarian"], "toastCategory": "Children's Menu (Under 10, Por Favor)" },
+        { "id": "k-beef-taco", "name": "K- Beef Taco", "description": "Ground beef taco with shredded cheese and served with rice", "price": 7.5, "toastCategory": "Children's Menu (Under 10, Por Favor)" },
+        { "id": "k-chicken-taco", "name": "K- Chicken Taco", "description": "Soft flour tortilla with fried chicken served with rice", "price": 7.5, "toastCategory": "Children's Menu (Under 10, Por Favor)" },
+        { "id": "k-cheese-enchilada", "name": "K- Cheese Enchilada", "description": "Served with rice", "price": 7.5, "toastCategory": "Children's Menu (Under 10, Por Favor)" },
+        { "id": "k-chicken-cheese-quesadilla", "name": "K- Chicken and Cheese Quesadilla", "description": "Served with rice", "price": 10.5, "toastCategory": "Children's Menu (Under 10, Por Favor)" },
+        { "id": "k-beef-enchilada", "name": "K- Beef Enchilada", "price": 8.25, "toastCategory": "Children's Menu (Under 10, Por Favor)" }
+      ]
+    },
+    {
+      "slug": "postres",
+      "name": "Postres (Desserts)",
+      "items": [
+        { "id": "pastel-de-tres-leches", "name": "Pastel De Tres Leches", "description": "Our signature cake. A three milk sponge cake iced with whipped cream topped with mixed seasonal fruits. Whole dessert available. (24-48 hours notice required)", "price": 6.5, "toastCategory": "Postres (Homemade Style Desserts)" },
+        { "id": "flan", "name": "Flan", "description": "Please ask us about our special flan of the day", "price": 6.5, "toastCategory": "Postres (Homemade Style Desserts)" },
+        { "id": "sopapilla", "name": "Sopapilla", "description": "A deep-fried flour tortilla topped with honey", "price": 6.5, "toastCategory": "Postres (Homemade Style Desserts)" },
+        { "id": "churros", "name": "Churros", "price": 6.5, "toastCategory": "Postres (Homemade Style Desserts)" },
+        { "id": "bread-pudding", "name": "Bread Pudding", "price": 6.5, "toastCategory": "Postres (Homemade Style Desserts)" },
+        { "id": "fried-ice-cream", "name": "Fried Ice Cream", "price": 6.95, "toastCategory": "Postres (Homemade Style Desserts)" },
+        { "id": "ice-cream", "name": "Ice Cream", "price": 4.5, "toastCategory": "Postres (Homemade Style Desserts)" }
+      ]
+    },
+    {
+      "slug": "beverages",
+      "name": "Beverages",
+      "items": [
+        { "id": "coca-cola", "name": "Coca-Cola", "price": 3.75, "toastCategory": "Beverages (Online)" },
+        { "id": "coca-cola-zero", "name": "Coca-Cola Zero Sugar", "price": 3.75, "toastCategory": "Beverages (Online)" },
+        { "id": "diet-coke", "name": "Diet Coke", "price": 3.75, "toastCategory": "Beverages (Online)" },
+        { "id": "dr-pepper", "name": "Dr. Pepper", "price": 3.75, "toastCategory": "Beverages (Online)" },
+        { "id": "sweet-tea", "name": "Sweet Tea", "price": 3.75, "toastCategory": "Beverages (Online)" },
+        { "id": "unsweet-tea", "name": "Unsweet Tea", "price": 3.75, "toastCategory": "Beverages (Online)" },
+        { "id": "half-half-tea", "name": "Half & Half Tea", "price": 3.75, "toastCategory": "Beverages (Online)" },
+        { "id": "arnold-palmer", "name": "Arnold Palmer", "price": 3.75, "toastCategory": "Beverages (Online)" },
+        { "id": "sprite", "name": "Sprite", "price": 3.75, "toastCategory": "Beverages (Online)" },
+        { "id": "lemonade", "name": "Lemonade", "price": 3.75, "toastCategory": "Beverages (Online)" },
+        { "id": "jarritos", "name": "Jarritos", "price": 3.25, "toastCategory": "Beverages (Online)" },
+        { "id": "mexican-coke", "name": "Mexican Coke", "price": 4.25, "toastCategory": "Beverages (Online)" },
+        { "id": "agua-de-jamaica", "name": "Agua De Jamaica", "price": 5.25, "toastCategory": "Beverages (Online)" },
+        { "id": "agua-de-horchata", "name": "Agua De Horchata", "description": "A Mexican drink made with ground rice, evaporated milk, vanilla, cinnamon, sugar and water", "price": 5.25, "toastCategory": "Beverages (Online)" },
+        { "id": "club-soda", "name": "Club Soda", "price": 2.25, "toastCategory": "Beverages (Online)" }
+      ]
+    }
+  ]
 }

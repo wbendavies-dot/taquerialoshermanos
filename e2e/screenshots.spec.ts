@@ -19,4 +19,15 @@ test.describe("review screenshots", () => {
     await page.waitForTimeout(400);
     await page.screenshot({ path: ".screenshots/p1-dialog.png" });
   });
+
+  test("capture menu states", async ({ page }) => {
+    await page.goto("/menu");
+    await page.waitForLoadState("networkidle");
+    await page.waitForTimeout(400);
+    await page.screenshot({ path: ".screenshots/p2-menu-top.png" });
+
+    await page.getByRole("searchbox").fill("brisket");
+    await page.waitForTimeout(300);
+    await page.screenshot({ path: ".screenshots/p2-menu-search.png" });
+  });
 });
