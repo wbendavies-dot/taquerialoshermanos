@@ -133,50 +133,61 @@ export default function HomePage() {
 
         {/* STORY / AWARD */}
         <section aria-labelledby="story-heading" className="pt-16">
-          <div className="grid items-center gap-6 rounded-xl border border-cream-dark bg-white p-6 md:grid-cols-[auto_1fr] md:p-8">
-            <FadeIn from="right">
-              <ParallaxY shift={22}>
-                <div className="group relative mx-auto h-56 w-44 overflow-hidden rounded-lg md:h-64 md:w-52">
+          <div className="rounded-xl border border-cream-dark bg-white p-6 md:p-8">
+            {/* Desktop: the old banner crowns the card as a letterhead */}
+            <FadeIn className="hidden md:block">
+              <Image
+                src={legacyBanner}
+                alt="The original hand-painted Los Hermanos banner — “Specializing in Quality Since 2000”"
+                sizes="576px"
+                className="mx-auto mb-8 w-full max-w-xl"
+              />
+            </FadeIn>
+            <div className="grid items-center gap-6 md:grid-cols-[auto_1fr]">
+              <FadeIn from="right">
+                <ParallaxY shift={22}>
+                  <div className="group relative mx-auto h-56 w-44 overflow-hidden rounded-lg md:h-64 md:w-52">
+                    <Image
+                      src={brandAward}
+                      alt="Team member holding the framed Best of Perimeter award for Best Mexican Food"
+                      fill
+                      sizes="208px"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  </div>
+                </ParallaxY>
+              </FadeIn>
+              <FadeIn from="left" delay={0.1}>
+                <div className="text-center md:text-left">
                   <Image
-                    src={brandAward}
-                    alt="Team member holding the framed Best of Perimeter award for Best Mexican Food"
-                    fill
-                    sizes="208px"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    src={legacyBanner}
+                    alt="The original hand-painted Los Hermanos banner — “Specializing in Quality Since 2000”"
+                    sizes="320px"
+                    className="mx-auto mb-4 w-full max-w-xs md:hidden"
                   />
+                  <h2
+                    id="story-heading"
+                    className="font-display text-[length:var(--text-display-md)]"
+                  >
+                    Three brothers, one kitchen
+                  </h2>
+                  <p className="mt-3 leading-relaxed text-charcoal-soft">
+                    Miguel, Roel, and Raul opened the first Taqueria Los
+                    Hermanos in 2001 with recipes from Mexico&rsquo;s
+                    southwestern coast. Twenty-five years and five taquerias
+                    later, everything is still prepped fresh every morning —
+                    and the neighbors keep voting it the best Mexican food
+                    around.
+                  </p>
+                  <Link
+                    href="/nuestra-historia"
+                    className="mt-4 inline-flex min-h-11 items-center font-semibold text-terra-text underline-offset-2 hover:underline"
+                  >
+                    Nuestra historia →
+                  </Link>
                 </div>
-              </ParallaxY>
-            </FadeIn>
-            <FadeIn from="left" delay={0.1}>
-              <div className="text-center md:text-left">
-                <Image
-                  src={legacyBanner}
-                  alt="The original hand-painted Los Hermanos banner — “Specializing in Quality Since 2000”"
-                  sizes="320px"
-                  className="mx-auto mb-4 w-full max-w-xs md:mx-0"
-                />
-                <h2
-                  id="story-heading"
-                  className="font-display text-[length:var(--text-display-md)]"
-                >
-                  Three brothers, one kitchen
-                </h2>
-                <p className="mt-3 leading-relaxed text-charcoal-soft">
-                  Miguel, Roel, and Raul opened the first Taqueria Los
-                  Hermanos in 2001 with recipes from Mexico&rsquo;s
-                  southwestern coast. Twenty-five years and five taquerias
-                  later, everything is still prepped fresh every morning —
-                  and the neighbors keep voting it the best Mexican food
-                  around.
-                </p>
-                <Link
-                  href="/nuestra-historia"
-                  className="mt-4 inline-flex min-h-11 items-center font-semibold text-terra-text underline-offset-2 hover:underline"
-                >
-                  Nuestra historia →
-                </Link>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           </div>
         </section>
 
