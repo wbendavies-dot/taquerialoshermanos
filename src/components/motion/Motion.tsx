@@ -9,10 +9,10 @@ import { LazyMotion, m, useReducedMotion } from "framer-motion";
  * Features load asynchronously so the animation runtime stays out of
  * First Load JS (the budget reason LazyMotion exists).
  */
-const loadFeatures = () =>
+export const loadFeatures = () =>
   import("framer-motion").then((mod) => mod.domAnimation);
 
-const EASE_ENTRANCE = [0.16, 1, 0.3, 1] as const;
+export const EASE_ENTRANCE = [0.16, 1, 0.3, 1] as const;
 
 type Direction = "up" | "down" | "left" | "right" | "none";
 

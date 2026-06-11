@@ -6,10 +6,12 @@ import brandAward from "@/assets/images/brand-award.jpg";
 import foodStreetTacos from "@/assets/images/food-street-tacos.jpg";
 import foodTacoSalad from "@/assets/images/food-taco-salad.jpg";
 import foodTilapia from "@/assets/images/food-tilapia.jpg";
-import heroBurrito from "@/assets/images/hero-burrito.jpg";
 import { FavoritesGrid } from "@/components/home/FavoritesGrid";
+import { HomeHero } from "@/components/home/HomeHero";
 import { OpenBadge } from "@/components/home/OpenBadge";
+import { TiltCard } from "@/components/motion/Interactive";
 import { FadeIn, Stagger, StaggerItem } from "@/components/motion/Motion";
+import { ParallaxY, VelocityTicker } from "@/components/motion/Scroll";
 import { getLocations, getPopularItems, getSiteSettings } from "@/lib/content";
 import { DAY_LABELS, formatTime } from "@/lib/hours";
 import { telHref } from "@/lib/links";
@@ -32,7 +34,7 @@ const RIBBON_DISHES = [
   "Tres leches",
 ];
 
-/** Decorative scrolling dish ribbon (CSS transform marquee). */
+/** Decorative dish ribbon — speeds up and reverses with scroll. */
 function DishRibbon() {
   const run = RIBBON_DISHES.map((dish) => (
     <span key={dish} className="flex items-center gap-8 pr-8">
@@ -43,12 +45,11 @@ function DishRibbon() {
   return (
     <div
       aria-hidden="true"
-      className="overflow-hidden border-y border-charcoal bg-charcoal py-4 text-cream"
+      className="border-y border-charcoal bg-charcoal py-4 text-cream"
     >
-      <div className="marquee-track font-display gap-0 text-2xl whitespace-nowrap sm:text-3xl">
-        <div className="flex">{run}</div>
-        <div className="flex">{run}</div>
-      </div>
+      <VelocityTicker className="font-display text-2xl sm:text-3xl">
+        {run}
+      </VelocityTicker>
     </div>
   );
 }
@@ -62,69 +63,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO — full-bleed, cinematic, choreographed entrance */}
-      <section className="relative flex min-h-[86svh] items-end overflow-hidden bg-charcoal">
-        <Image
-          src={heroBurrito}
-          alt="Grilled burrito cut in half on a plate, held up in the dining room under papel picado"
-          fill
-          priority
-          sizes="100vw"
-          className="kenburns object-cover"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/45 to-charcoal/10"
-        />
-
-        <Stagger className="relative mx-auto w-full max-w-5xl px-4 pb-16 text-cream sm:pb-20">
-          <StaggerItem>
-            <p className="text-sm font-medium tracking-[0.25em] text-gold uppercase">
-              Taqueria · Familia · Est. 2001
-            </p>
-          </StaggerItem>
-          <StaggerItem>
-            <h1 className="font-display mt-3 text-[length:var(--text-display-hero)] leading-[0.95]">
-              Los Hermanos
-            </h1>
-          </StaggerItem>
-          <StaggerItem>
-            <p className="mt-4 max-w-md text-lg text-cream/90">
-              Three brothers. One kitchen. Authentic Mexican food across
-              metro Atlanta since 2001.
-            </p>
-          </StaggerItem>
-          <StaggerItem>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link
-                href="/menu"
-                className="group bg-cta inline-flex min-h-13 items-center gap-2 rounded-md px-7 text-lg font-semibold text-white transition-opacity duration-[var(--duration-micro)] hover:opacity-90"
-              >
-                View the menu
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-[var(--duration-micro)] group-hover:translate-x-1"
-                >
-                  →
-                </span>
-              </Link>
-              <a
-                href="#locations"
-                className="inline-flex min-h-13 items-center rounded-md border border-cream/40 px-7 text-lg font-semibold text-cream backdrop-blur-sm transition-colors duration-[var(--duration-micro)] hover:border-cream"
-              >
-                Find your taqueria
-              </a>
-            </div>
-          </StaggerItem>
-        </Stagger>
-
-        <div
-          aria-hidden="true"
-          className="pulse-soft absolute bottom-4 left-1/2 hidden -translate-x-1/2 text-cream sm:block"
-        >
-          ↓
-        </div>
-      </section>
+      {/* HERO — full-bleed, parallax + spotlight + magnetic CTAs */}
+      <HomeHero />
 
       {/* TRUST BAR — real claims only */}
       <section aria-label="Recognition" className="bg-terra-text text-white">
@@ -174,15 +114,17 @@ export default function HomePage() {
           <Stagger as="ul" className="grid grid-cols-2 gap-3 md:grid-cols-4" step={0.06}>
             {GALLERY.map((photo) => (
               <StaggerItem as="li" key={photo.src.src}>
-                <div className="group relative aspect-square overflow-hidden rounded-lg">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    sizes="(min-width: 768px) 25vw, 50vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
-                </div>
+                <TiltCard maxTilt={9}>
+                  <div className="group relative aspect-square overflow-hidden rounded-lg">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="(min-width: 768px) 25vw, 50vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
+                  </div>
+                </TiltCard>
               </StaggerItem>
             ))}
           </Stagger>
@@ -192,15 +134,17 @@ export default function HomePage() {
         <section aria-labelledby="story-heading" className="pt-16">
           <div className="grid items-center gap-6 rounded-xl border border-cream-dark bg-white p-6 md:grid-cols-[auto_1fr] md:p-8">
             <FadeIn from="right">
-              <div className="group relative mx-auto h-56 w-44 overflow-hidden rounded-lg md:h-64 md:w-52">
-                <Image
-                  src={brandAward}
-                  alt="Team member holding the framed Best of Perimeter award for Best Mexican Food"
-                  fill
-                  sizes="208px"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-              </div>
+              <ParallaxY shift={22}>
+                <div className="group relative mx-auto h-56 w-44 overflow-hidden rounded-lg md:h-64 md:w-52">
+                  <Image
+                    src={brandAward}
+                    alt="Team member holding the framed Best of Perimeter award for Best Mexican Food"
+                    fill
+                    sizes="208px"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                </div>
+              </ParallaxY>
             </FadeIn>
             <FadeIn from="left" delay={0.1}>
               <div className="text-center md:text-left">

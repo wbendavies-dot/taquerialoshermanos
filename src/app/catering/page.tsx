@@ -4,6 +4,7 @@ import Image from "next/image";
 import foodStreetTacos from "@/assets/images/food-street-tacos.jpg";
 import { CateringInquiryForm } from "@/components/catering/CateringInquiryForm";
 import { FadeIn } from "@/components/motion/Motion";
+import { ParallaxY } from "@/components/motion/Scroll";
 import { getCatering, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -101,16 +102,18 @@ export default function CateringPage() {
               any catering order.
             </p>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-            <Image
-              src={foodStreetTacos}
-              alt="Street tacos on handmade tortillas with salsas and lime"
-              fill
-              priority
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <ParallaxY shift={26}>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src={foodStreetTacos}
+                alt="Street tacos on handmade tortillas with salsas and lime"
+                fill
+                priority
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </ParallaxY>
         </div>
       </section>
 

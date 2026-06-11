@@ -7,6 +7,7 @@ import { Footer } from "@/components/chrome/Footer";
 import { Header } from "@/components/chrome/Header";
 import { LocationDialog } from "@/components/chrome/LocationDialog";
 import { SiteStateProvider } from "@/components/chrome/site-state";
+import { ScrollProgressBar } from "@/components/motion/Scroll";
 import { getLocations } from "@/lib/content";
 
 import "./globals.css";
@@ -45,6 +46,7 @@ export default function RootLayout({
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body>
         <SiteStateProvider locations={locations}>
+          <ScrollProgressBar />
           <AnnouncementBar />
           <Header />
           {children}

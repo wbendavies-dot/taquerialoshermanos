@@ -69,7 +69,9 @@ Animations exist to confirm actions and guide attention — never to perform.
 - **Easing**: `ease-out` / `--ease-entrance` for entrances, `ease-in-out` for movement; no bounces/elastics — this is a premium brand, not a toy.
 - **Only animate `transform` and `opacity`.** Animating layout properties (width/height/top/margin) is forbidden — it causes jank and CLS.
 - **Scroll reveals**: once per element via `FadeIn`/`Stagger` primitives (≤32px translate + fade). Content must be readable with JS disabled — `[data-motion]` + `scripting: none` CSS covers this.
-- **Sanctioned continuous/decorative motion** (amended June 2026): slow hero image drift (`.kenburns`), the CSS transform dish ribbon (`.marquee-track`, decorative `aria-hidden` only, pauses on hover), the scroll cue pulse, and `.card-lift` hover physics. All are CSS, transform/opacity only, and **all stop under `prefers-reduced-motion`** (single media block in globals.css — new continuous animations must be added to it).
+- **Sanctioned continuous/decorative motion** (amended June 2026): slow hero image drift (`.kenburns`), the scroll cue pulse, and `.card-lift` hover physics. All are CSS, transform/opacity only, and **all stop under `prefers-reduced-motion`** (single media block in globals.css — new continuous animations must be added to it).
+- **Sanctioned scroll-linked motion** (amended June 2026, owner direction) — only via the primitives in `src/components/motion/Scroll.tsx`: `ScrollProgressBar`, `ParallaxY` (≤40px travel), `VelocityTicker` (decorative `aria-hidden` content only), and the hero parallax in `HomeHero`. All are motion-value driven (zero per-frame React re-renders), transform-only, and static under reduced motion. No scroll-jacking: scrolling must never be hijacked, slowed, or snapped.
+- **Sanctioned pointer-reactive motion** (amended June 2026) — only via `src/components/motion/Interactive.tsx`: `Magnetic` CTAs, `TiltCard`, `useSpotlight`. All gate behind `(pointer: fine)` **and** no-reduced-motion (`useInteractivePointer`); touch devices get the static experience. Springs only, no per-frame re-renders.
 - **`prefers-reduced-motion: reduce` disables all non-essential motion.** Every animation ships with its reduced variant in the same PR. Essential feedback (button press states, form validation) remains, instant.
 - **Still forbidden**: parallax, autoplaying carousels, scroll-jacking, marquees carrying *content* (decorative-only), animated page transitions that delay content.
 - The hero video: muted, `playsinline`, lazy, poster-first, paused under reduced-motion and data-saver, ≤4MB.
@@ -96,7 +98,7 @@ Tested on throttled 4G, mid-range Android profile (Lighthouse mobile):
 | CLS | < 0.1 |
 | INP | < 200ms |
 | Lighthouse (mobile) | ≥ 95 all categories |
-| First Load JS per route (gzipped) | ≤ 130KB; menu page ≤ 160KB |
+| First Load JS per route (gzipped) | ≤ 130KB; homepage ≤ 140KB (interactive motion, owner-approved June 2026); menu page ≤ 160KB |
 | Above-fold image weight | ≤ 200KB/image (AVIF + WebP fallback) |
 | Fonts | ≤ 2 families, WOFF2, subset, `font-display: swap`, preloaded |
 
