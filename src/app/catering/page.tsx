@@ -164,7 +164,7 @@ export default function CateringPage() {
           <ul className="mt-8 grid gap-4 md:grid-cols-2">
             {catering.packages.map((pkg) => (
               <li key={pkg.slug} className="flex">
-                <FadeIn className="flex w-full flex-col rounded-xl border border-cream-dark bg-white p-6">
+                <FadeIn className="card-lift flex w-full flex-col rounded-xl border border-cream-dark bg-white p-6">
                   <p className="text-xs tracking-widest uppercase text-charcoal-soft">
                     Menu #{pkg.menuNumber}
                   </p>

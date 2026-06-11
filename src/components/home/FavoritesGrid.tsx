@@ -26,7 +26,7 @@ export function FavoritesGrid({ items }: { items: PopularItem[] }) {
         return (
           <li
             key={item.id}
-            className="flex flex-col rounded-lg border border-cream-dark bg-white p-4"
+            className="card-lift flex flex-col rounded-lg border border-cream-dark bg-white p-4"
           >
             <div className="flex items-baseline justify-between gap-3">
               <h3 className="font-semibold">{item.name}</h3>

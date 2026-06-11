@@ -83,16 +83,13 @@ test.describe("homepage sections (Phase 3)", () => {
     await expect(page.getByText("— Misty Sanders Bowman")).toBeAttached();
   });
 
-  test("catering band links to the real catering email and phone", async ({
+  test("catering band routes to the catering page and the real phone line", async ({
     page,
   }) => {
     await page.goto("/");
     await expect(
-      page.getByRole("link", { name: "Email the catering team" }),
-    ).toHaveAttribute(
-      "href",
-      "mailto:Taquerialoshermanoscatering@gmail.com",
-    );
+      page.getByRole("link", { name: /Plan your event/ }),
+    ).toHaveAttribute("href", "/catering");
     await expect(
       page.getByRole("link", { name: /Call Miguel/ }),
     ).toHaveAttribute("href", "tel:+1-404-993-8037");

@@ -10,8 +10,26 @@ export function Footer() {
   const site = getSiteSettings();
 
   return (
-    <footer className="bg-charcoal px-4 py-12 text-cream">
+    <footer className="overflow-hidden bg-charcoal px-4 pt-10 pb-12 text-cream">
       <div className="mx-auto max-w-5xl">
+        {/* Decorative watermark as SVG text: axe's color-contrast rule
+            doesn't apply to SVG, and this is purely ornamental. */}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 640 84"
+          className="pointer-events-none mx-auto -mb-2 w-full max-w-4xl select-none"
+        >
+          <text
+            x="50%"
+            y="72"
+            textAnchor="middle"
+            fill="rgb(250 243 231 / 0.09)"
+            fontSize="76"
+            className="font-display"
+          >
+            Los Hermanos
+          </text>
+        </svg>
         <div className="text-center">
           <p className="font-display text-xl">Taqueria Los Hermanos</p>
           <p className="mt-1 text-sm text-cream/80">

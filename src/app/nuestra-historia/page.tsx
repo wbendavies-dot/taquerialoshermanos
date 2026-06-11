@@ -75,7 +75,7 @@ export default function StoryPage() {
             ],
           ].map(([title, body]) => (
             <li key={title}>
-              <FadeIn className="h-full rounded-xl border border-cream-dark bg-white p-5">
+              <FadeIn className="card-lift h-full rounded-xl border border-cream-dark bg-white p-5">
                 <h3 className="font-display text-lg">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-charcoal-soft">
                   {body}

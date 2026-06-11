@@ -65,12 +65,13 @@ Tokens (define in Tailwind theme; never inline hex):
 
 Animations exist to confirm actions and guide attention — never to perform.
 
-- **Durations**: micro-interactions 150–200ms; section reveals 300–400ms; nothing over 500ms.
-- **Easing**: `ease-out` for entrances, `ease-in-out` for movement; no bounces/elastics — this is a premium brand, not a toy.
+- **Durations**: micro-interactions 150–200ms; reveals 350–600ms; choreographed entrances (hero stagger) may total ~1s. (Amended June 2026 — owner direction: bolder motion design.)
+- **Easing**: `ease-out` / `--ease-entrance` for entrances, `ease-in-out` for movement; no bounces/elastics — this is a premium brand, not a toy.
 - **Only animate `transform` and `opacity`.** Animating layout properties (width/height/top/margin) is forbidden — it causes jank and CLS.
-- **Scroll reveals**: IntersectionObserver, once per element, subtle (≤16px translate + fade). Content must be readable with JS disabled — reveal-from-invisible only via progressive enhancement.
+- **Scroll reveals**: once per element via `FadeIn`/`Stagger` primitives (≤32px translate + fade). Content must be readable with JS disabled — `[data-motion]` + `scripting: none` CSS covers this.
+- **Sanctioned continuous/decorative motion** (amended June 2026): slow hero image drift (`.kenburns`), the CSS transform dish ribbon (`.marquee-track`, decorative `aria-hidden` only, pauses on hover), the scroll cue pulse, and `.card-lift` hover physics. All are CSS, transform/opacity only, and **all stop under `prefers-reduced-motion`** (single media block in globals.css — new continuous animations must be added to it).
 - **`prefers-reduced-motion: reduce` disables all non-essential motion.** Every animation ships with its reduced variant in the same PR. Essential feedback (button press states, form validation) remains, instant.
-- **No**: parallax, autoplaying carousels, scroll-jacking, marquee effects, animated page transitions that delay content.
+- **Still forbidden**: parallax, autoplaying carousels, scroll-jacking, marquees carrying *content* (decorative-only), animated page transitions that delay content.
 - The hero video: muted, `playsinline`, lazy, poster-first, paused under reduced-motion and data-saver, ≤4MB.
 
 ## Accessibility (WCAG 2.2 AA floor, AAA where cheap)

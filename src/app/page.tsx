@@ -9,7 +9,7 @@ import foodTilapia from "@/assets/images/food-tilapia.jpg";
 import heroBurrito from "@/assets/images/hero-burrito.jpg";
 import { FavoritesGrid } from "@/components/home/FavoritesGrid";
 import { OpenBadge } from "@/components/home/OpenBadge";
-import { FadeIn } from "@/components/motion/Motion";
+import { FadeIn, Stagger, StaggerItem } from "@/components/motion/Motion";
 import { getLocations, getPopularItems, getSiteSettings } from "@/lib/content";
 import { DAY_LABELS, formatTime } from "@/lib/hours";
 import { telHref } from "@/lib/links";
@@ -21,6 +21,38 @@ const GALLERY = [
   { src: drinksLoteria, alt: "Shrimp cocktail and a chile-rimmed michelada in a hand-painted Lotería mug on the patio" },
 ];
 
+const RIBBON_DISHES = [
+  "Tacos al pastor",
+  "Cesina",
+  "Quesabirria",
+  "Fajitas",
+  "Tlayudas",
+  "Molcajete",
+  "Enchiladas suizas",
+  "Tres leches",
+];
+
+/** Decorative scrolling dish ribbon (CSS transform marquee). */
+function DishRibbon() {
+  const run = RIBBON_DISHES.map((dish) => (
+    <span key={dish} className="flex items-center gap-8 pr-8">
+      {dish}
+      <span className="text-gold">✦</span>
+    </span>
+  ));
+  return (
+    <div
+      aria-hidden="true"
+      className="overflow-hidden border-y border-charcoal bg-charcoal py-4 text-cream"
+    >
+      <div className="marquee-track font-display gap-0 text-2xl whitespace-nowrap sm:text-3xl">
+        <div className="flex">{run}</div>
+        <div className="flex">{run}</div>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const locations = getLocations();
   const favorites = getPopularItems();
@@ -30,45 +62,67 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO — appetite + the three jobs, first screen */}
-      <section className="bg-cream">
-        <div className="mx-auto grid max-w-5xl items-center gap-6 px-4 pt-8 pb-10 md:grid-cols-2 md:pt-14">
-          <div className="text-center md:text-left">
-            <p className="text-sm tracking-widest uppercase text-terra-text">
-              Taqueria · Est. 2001
+      {/* HERO — full-bleed, cinematic, choreographed entrance */}
+      <section className="relative flex min-h-[86svh] items-end overflow-hidden bg-charcoal">
+        <Image
+          src={heroBurrito}
+          alt="Grilled burrito cut in half on a plate, held up in the dining room under papel picado"
+          fill
+          priority
+          sizes="100vw"
+          className="kenburns object-cover"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/45 to-charcoal/10"
+        />
+
+        <Stagger className="relative mx-auto w-full max-w-5xl px-4 pb-16 text-cream sm:pb-20">
+          <StaggerItem>
+            <p className="text-sm font-medium tracking-[0.25em] text-gold uppercase">
+              Taqueria · Familia · Est. 2001
             </p>
-            <h1 className="font-display mt-2 text-[length:var(--text-display-xl)] leading-tight">
+          </StaggerItem>
+          <StaggerItem>
+            <h1 className="font-display mt-3 text-[length:var(--text-display-hero)] leading-[0.95]">
               Los Hermanos
             </h1>
-            <p className="mx-auto mt-4 max-w-md text-lg text-charcoal-soft md:mx-0">
-              Three brothers. One kitchen. Authentic Mexican food across metro
-              Atlanta since 2001.
+          </StaggerItem>
+          <StaggerItem>
+            <p className="mt-4 max-w-md text-lg text-cream/90">
+              Three brothers. One kitchen. Authentic Mexican food across
+              metro Atlanta since 2001.
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
+          </StaggerItem>
+          <StaggerItem>
+            <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/menu"
-                className="bg-cta inline-flex min-h-12 items-center rounded-md px-6 font-semibold text-white transition-opacity duration-[var(--duration-micro)] hover:opacity-90"
+                className="group bg-cta inline-flex min-h-13 items-center gap-2 rounded-md px-7 text-lg font-semibold text-white transition-opacity duration-[var(--duration-micro)] hover:opacity-90"
               >
                 View the menu
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-[var(--duration-micro)] group-hover:translate-x-1"
+                >
+                  →
+                </span>
               </Link>
               <a
                 href="#locations"
-                className="inline-flex min-h-12 items-center rounded-md border border-charcoal/20 px-6 font-semibold transition-colors duration-[var(--duration-micro)] hover:border-terra"
+                className="inline-flex min-h-13 items-center rounded-md border border-cream/40 px-7 text-lg font-semibold text-cream backdrop-blur-sm transition-colors duration-[var(--duration-micro)] hover:border-cream"
               >
                 Find your taqueria
               </a>
             </div>
-          </div>
-          <div className="relative aspect-square overflow-hidden rounded-xl md:aspect-[4/5]">
-            <Image
-              src={heroBurrito}
-              alt="Grilled burrito cut in half on a plate, held up in the dining room under papel picado"
-              fill
-              priority
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          </StaggerItem>
+        </Stagger>
+
+        <div
+          aria-hidden="true"
+          className="pulse-soft absolute bottom-4 left-1/2 hidden -translate-x-1/2 text-cream sm:block"
+        >
+          ↓
         </div>
       </section>
 
@@ -81,129 +135,169 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* DISH RIBBON */}
+      <DishRibbon />
+
       <main className="mx-auto max-w-5xl px-4">
         {/* LO MÁS PEDIDO */}
-        <section aria-labelledby="favorites-heading" className="pt-12">
-          <h2
-            id="favorites-heading"
-            className="font-display text-center text-[length:var(--text-display-md)]"
-          >
-            Lo más pedido
-          </h2>
-          <p className="mt-2 text-center text-charcoal-soft">
-            The dishes our regulars come back for.
-          </p>
+        <section aria-labelledby="favorites-heading" className="pt-14">
+          <FadeIn>
+            <p className="text-center text-sm font-medium tracking-[0.25em] text-terra-text uppercase">
+              The dishes our regulars come back for
+            </p>
+            <h2
+              id="favorites-heading"
+              className="font-display mt-2 text-center text-[length:var(--text-display-xl)]"
+            >
+              Lo más pedido
+            </h2>
+          </FadeIn>
           <FavoritesGrid items={favorites} />
-          <p className="mt-6 text-center">
+          <p className="mt-8 text-center">
             <Link
               href="/menu"
-              className="inline-flex min-h-12 items-center rounded-md border border-charcoal/20 px-6 font-semibold transition-colors duration-[var(--duration-micro)] hover:border-terra"
+              className="group inline-flex min-h-12 items-center gap-2 rounded-md border border-charcoal/20 px-6 font-semibold transition-colors duration-[var(--duration-micro)] hover:border-terra"
             >
-              See the full menu →
+              See the full menu
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-[var(--duration-micro)] group-hover:translate-x-1"
+              >
+                →
+              </span>
             </Link>
           </p>
         </section>
 
-        {/* GALLERY */}
-        <section aria-label="From the kitchen" className="pt-14">
-          <ul className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        {/* GALLERY — hover zoom mosaic */}
+        <section aria-label="From the kitchen" className="pt-16">
+          <Stagger as="ul" className="grid grid-cols-2 gap-3 md:grid-cols-4" step={0.06}>
             {GALLERY.map((photo) => (
-              <li key={photo.src.src}>
-                <FadeIn className="relative aspect-square overflow-hidden rounded-lg">
+              <StaggerItem as="li" key={photo.src.src}>
+                <div className="group relative aspect-square overflow-hidden rounded-lg">
                   <Image
                     src={photo.src}
                     alt={photo.alt}
                     fill
                     sizes="(min-width: 768px) 25vw, 50vw"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
-                </FadeIn>
-              </li>
+                </div>
+              </StaggerItem>
             ))}
-          </ul>
+          </Stagger>
         </section>
 
         {/* STORY / AWARD */}
-        <section aria-labelledby="story-heading" className="pt-14">
+        <section aria-labelledby="story-heading" className="pt-16">
           <div className="grid items-center gap-6 rounded-xl border border-cream-dark bg-white p-6 md:grid-cols-[auto_1fr] md:p-8">
-            <div className="relative mx-auto h-56 w-44 overflow-hidden rounded-lg md:h-64 md:w-52">
-              <Image
-                src={brandAward}
-                alt="Team member holding the framed Best of Perimeter award for Best Mexican Food"
-                fill
-                sizes="208px"
-                className="object-cover"
-              />
-            </div>
-            <div className="text-center md:text-left">
-              <h2
-                id="story-heading"
-                className="font-display text-[length:var(--text-display-md)]"
-              >
-                Three brothers, one kitchen
-              </h2>
-              <p className="mt-3 leading-relaxed text-charcoal-soft">
-                Miguel, Roel, and Raul opened the first Taqueria Los Hermanos
-                in 2001 with recipes from Mexico&rsquo;s southwestern coast.
-                Twenty-five years and five taquerias later, everything is
-                still prepped fresh every morning — and the neighbors keep
-                voting it the best Mexican food around.
-              </p>
-            </div>
+            <FadeIn from="right">
+              <div className="group relative mx-auto h-56 w-44 overflow-hidden rounded-lg md:h-64 md:w-52">
+                <Image
+                  src={brandAward}
+                  alt="Team member holding the framed Best of Perimeter award for Best Mexican Food"
+                  fill
+                  sizes="208px"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </div>
+            </FadeIn>
+            <FadeIn from="left" delay={0.1}>
+              <div className="text-center md:text-left">
+                <h2
+                  id="story-heading"
+                  className="font-display text-[length:var(--text-display-md)]"
+                >
+                  Three brothers, one kitchen
+                </h2>
+                <p className="mt-3 leading-relaxed text-charcoal-soft">
+                  Miguel, Roel, and Raul opened the first Taqueria Los
+                  Hermanos in 2001 with recipes from Mexico&rsquo;s
+                  southwestern coast. Twenty-five years and five taquerias
+                  later, everything is still prepped fresh every morning —
+                  and the neighbors keep voting it the best Mexican food
+                  around.
+                </p>
+                <Link
+                  href="/nuestra-historia"
+                  className="mt-4 inline-flex min-h-11 items-center font-semibold text-terra-text underline-offset-2 hover:underline"
+                >
+                  Nuestra historia →
+                </Link>
+              </div>
+            </FadeIn>
           </div>
         </section>
 
         {/* CATERING */}
         <section
           aria-labelledby="catering-heading"
-          className="mt-14 rounded-xl bg-terra-text px-6 py-10 text-center text-white"
+          className="mt-16 overflow-hidden rounded-xl bg-terra-text text-center text-white"
         >
-          <h2
-            id="catering-heading"
-            className="font-display text-[length:var(--text-display-md)]"
+          <div
+            aria-hidden="true"
+            className="font-display border-b border-white/15 py-2 text-sm tracking-[0.3em] text-white/90 uppercase"
           >
-            Catering for your next event
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl leading-relaxed text-white/90">
-            Taco bars, fajita bars y más — buffet-style catering from
-            $12.95 per person, for offices, weddings, quinceañeras and
-            everything in between.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={`mailto:${site.catering.email}`}
-              className="inline-flex min-h-12 items-center rounded-md bg-white px-6 font-semibold text-terra-text transition-opacity duration-[var(--duration-micro)] hover:opacity-90"
-            >
-              Email the catering team
-            </a>
-            {site.catering.phones[0] && (
-              <a
-                href={`tel:+1-${site.catering.phones[0].phone}`}
-                className="inline-flex min-h-12 items-center rounded-md border border-white/40 px-6 font-semibold text-white transition-colors duration-[var(--duration-micro)] hover:border-white"
+            ✦ Catering ✦
+          </div>
+          <div className="px-6 py-10">
+            <FadeIn>
+              <h2
+                id="catering-heading"
+                className="font-display text-[length:var(--text-display-lg)]"
               >
-                Call {site.catering.phones[0].name}:{" "}
-                {site.catering.phones[0].phone}
-              </a>
-            )}
+                Feed the whole fiesta
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl leading-relaxed text-white/90">
+                Taco bars, fajita bars y más — buffet-style catering from
+                $12.95 per person, for offices, weddings, quinceañeras and
+                everything in between.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                <Link
+                  href="/catering"
+                  className="group inline-flex min-h-12 items-center gap-2 rounded-md bg-white px-6 font-semibold text-terra-text transition-opacity duration-[var(--duration-micro)] hover:opacity-90"
+                >
+                  Plan your event
+                  <span
+                    aria-hidden="true"
+                    className="transition-transform duration-[var(--duration-micro)] group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </Link>
+                {site.catering.phones[0] && (
+                  <a
+                    href={`tel:+1-${site.catering.phones[0].phone}`}
+                    className="inline-flex min-h-12 items-center rounded-md border border-white/40 px-6 font-semibold text-white transition-colors duration-[var(--duration-micro)] hover:border-white"
+                  >
+                    Call {site.catering.phones[0].name}:{" "}
+                    {site.catering.phones[0].phone}
+                  </a>
+                )}
+              </div>
+            </FadeIn>
           </div>
         </section>
 
         {/* LOCATIONS */}
-        <section aria-labelledby="locations-heading" id="locations" className="pt-14">
-          <h2
-            id="locations-heading"
-            className="font-display scroll-mt-20 text-center text-[length:var(--text-display-md)]"
-          >
-            Order from your taqueria
-          </h2>
+        <section aria-labelledby="locations-heading" id="locations" className="pt-16">
+          <FadeIn>
+            <p className="text-center text-sm font-medium tracking-[0.25em] text-terra-text uppercase">
+              Tucker · Lilburn · Suwanee · Lawrenceville · Dunwoody
+            </p>
+            <h2
+              id="locations-heading"
+              className="font-display mt-2 scroll-mt-20 text-center text-[length:var(--text-display-xl)]"
+            >
+              Order from your taqueria
+            </h2>
+          </FadeIn>
 
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {locations.map((location, index) => (
-              <li key={location.slug} className="flex">
-                <FadeIn
-                  delay={Math.min(index * 0.05, 0.2)}
-                  className="flex w-full flex-col rounded-lg border border-cream-dark bg-white p-5 shadow-sm"
-                >
+          <Stagger as="ul" className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" step={0.06}>
+            {locations.map((location) => (
+              <StaggerItem as="li" key={location.slug} className="flex">
+                <div className="card-lift flex w-full flex-col rounded-lg border border-cream-dark bg-white p-5 shadow-sm">
                   <h3 className="font-display text-xl">{location.name}</h3>
                   <OpenBadge
                     hours={location.hours}
@@ -228,21 +322,23 @@ export default function HomePage() {
                     Order online
                     <span className="sr-only"> from {location.name}</span>
                   </a>
-                </FadeIn>
-              </li>
+                </div>
+              </StaggerItem>
             ))}
-          </ul>
+          </Stagger>
         </section>
 
         {/* TESTIMONIALS — real reviews from the current site */}
-        <section aria-labelledby="reviews-heading" className="pt-14">
-          <h2
-            id="reviews-heading"
-            className="font-display text-center text-[length:var(--text-display-md)]"
-          >
-            What the neighbors say
-          </h2>
-          <ul className="mt-8 grid gap-4 md:grid-cols-3">
+        <section aria-labelledby="reviews-heading" className="pt-16">
+          <FadeIn>
+            <h2
+              id="reviews-heading"
+              className="font-display text-center text-[length:var(--text-display-xl)]"
+            >
+              What the neighbors say
+            </h2>
+          </FadeIn>
+          <Stagger as="ul" className="mt-8 grid gap-4 md:grid-cols-3" step={0.08}>
             {[
               {
                 quote:
@@ -260,56 +356,64 @@ export default function HomePage() {
                 name: "Misty Sanders Bowman",
               },
             ].map((review) => (
-              <li key={review.name}>
-                <FadeIn className="h-full rounded-lg border border-cream-dark bg-white p-5">
-                  <blockquote className="leading-relaxed">
-                    “{review.quote}”
-                  </blockquote>
-                  <p className="mt-3 text-sm font-medium text-charcoal-soft">
-                    — {review.name}
+              <StaggerItem as="li" key={review.name}>
+                <figure className="card-lift h-full rounded-lg border border-cream-dark bg-white p-5">
+                  <p
+                    aria-hidden="true"
+                    className="font-display text-3xl leading-none text-gold"
+                  >
+                    “
                   </p>
-                </FadeIn>
-              </li>
+                  <blockquote className="mt-1 leading-relaxed">
+                    {review.quote}
+                  </blockquote>
+                  <figcaption className="mt-3 text-sm font-medium text-charcoal-soft">
+                    — {review.name}
+                  </figcaption>
+                </figure>
+              </StaggerItem>
             ))}
-          </ul>
+          </Stagger>
         </section>
 
         {/* HOURS */}
         {hours && (
-          <section aria-labelledby="hours-heading" className="py-14">
-            <h2
-              id="hours-heading"
-              className="font-display text-center text-[length:var(--text-display-md)]"
-            >
-              Hours
-            </h2>
-            <table className="mx-auto mt-6 text-left">
-              <tbody>
-                {(
-                  Object.entries(DAY_LABELS) as [
-                    keyof typeof DAY_LABELS,
-                    string,
-                  ][]
-                ).map(([key, label]) => {
-                  const day = hours[key];
-                  return (
-                    <tr key={key}>
-                      <th scope="row" className="pr-8 py-1 font-medium">
-                        {label}
-                      </th>
-                      <td className="py-1 text-charcoal-soft">
-                        {day
-                          ? `${formatTime(day.open)} – ${formatTime(day.close)}`
-                          : "Closed"}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-            <p className="mt-3 text-center text-sm text-charcoal-soft">
-              Hours may vary by location and on holidays.
-            </p>
+          <section aria-labelledby="hours-heading" className="py-16">
+            <FadeIn>
+              <h2
+                id="hours-heading"
+                className="font-display text-center text-[length:var(--text-display-md)]"
+              >
+                Hours
+              </h2>
+              <table className="mx-auto mt-6 text-left">
+                <tbody>
+                  {(
+                    Object.entries(DAY_LABELS) as [
+                      keyof typeof DAY_LABELS,
+                      string,
+                    ][]
+                  ).map(([key, label]) => {
+                    const day = hours[key];
+                    return (
+                      <tr key={key}>
+                        <th scope="row" className="pr-8 py-1 font-medium">
+                          {label}
+                        </th>
+                        <td className="py-1 text-charcoal-soft">
+                          {day
+                            ? `${formatTime(day.open)} – ${formatTime(day.close)}`
+                            : "Closed"}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+              <p className="mt-3 text-center text-sm text-charcoal-soft">
+                Hours may vary by location and on holidays.
+              </p>
+            </FadeIn>
           </section>
         )}
       </main>

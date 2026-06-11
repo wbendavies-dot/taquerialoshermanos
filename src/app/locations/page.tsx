@@ -30,7 +30,7 @@ export default function LocationsPage() {
         {locations.map((location) => (
           <li
             key={location.slug}
-            className="flex flex-col rounded-lg border border-cream-dark bg-white p-5 shadow-sm"
+            className="card-lift flex flex-col rounded-lg border border-cream-dark bg-white p-5 shadow-sm"
           >
             <h2 className="font-display text-xl">{location.name}</h2>
             <OpenBadge
