@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+import { NAV_LINKS } from "@/components/chrome/nav-links";
 import { getLocations, getSiteSettings } from "@/lib/content";
 import { telHref } from "@/lib/links";
 
@@ -14,6 +17,20 @@ export function Footer() {
           <p className="mt-1 text-sm text-cream/80">
             Family-owned · Est. 2001 · Metro Atlanta
           </p>
+          <nav aria-label="Footer" className="mt-4">
+            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="min-h-11 content-center underline-offset-2 hover:underline"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
         <ul className="mt-10 grid gap-8 text-sm sm:grid-cols-2 lg:grid-cols-5">

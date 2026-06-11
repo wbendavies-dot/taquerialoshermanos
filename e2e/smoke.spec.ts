@@ -44,7 +44,7 @@ test.describe("legacy Wix URL redirects", () => {
   // Destinations are updated as their pages ship (see next.config.ts).
   const redirectMap: Record<string, string> = {
     "/menu-1": "/menu",
-    "/copy-of-menu": "/",
+    "/copy-of-menu": "/catering",
     "/online-order": "/",
   };
 

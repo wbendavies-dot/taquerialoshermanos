@@ -131,6 +131,45 @@ export const siteSchema = z.object({
   }),
 });
 
+const pricedLineSchema = z.object({
+  name: z.string().min(1),
+  price: z.number().positive().finite(),
+});
+
+export const cateringSchema = z.object({
+  minimumGuests: z.number().int().positive(),
+  noticeHours: z.number().int().positive(),
+  packages: z.array(
+    z
+      .object({
+        slug: z.string().regex(/^[a-z0-9-]+$/),
+        name: z.string().min(1),
+        menuNumber: z.number().int().positive(),
+        pricePerPerson: z.number().positive().finite().optional(),
+        variants: z
+          .array(
+            z.object({
+              name: z.string().min(1),
+              pricePerPerson: z.number().positive().finite(),
+            }),
+          )
+          .optional(),
+        note: z.string().default(""),
+        includes: z.array(z.string().min(1)).min(1),
+      })
+      .refine(
+        (pkg) => pkg.pricePerPerson !== undefined || pkg.variants?.length,
+        "A package needs a pricePerPerson or variants — no price-less packages",
+      ),
+  ),
+  alaCarte: z.array(pricedLineSchema),
+  desserts: z.array(pricedLineSchema),
+  drinks: z.array(pricedLineSchema),
+});
+
+export type Catering = z.infer<typeof cateringSchema>;
+export type CateringPackage = Catering["packages"][number];
+
 export type DayHours = z.infer<typeof dayHoursSchema>;
 export type WeeklyHours = z.infer<typeof weeklyHoursSchema>;
 export type HolidayOverride = z.infer<typeof holidayOverrideSchema>;

@@ -1,0 +1,85 @@
+{
+  "minimumGuests": 10,
+  "noticeHours": 48,
+  "packages": [
+    {
+      "slug": "taco-bar",
+      "name": "Taco Bar",
+      "menuNumber": 1,
+      "pricePerPerson": 14.95,
+      "note": "Two tacos per person, buffet style",
+      "includes": [
+        "Grilled marinated chicken & ground beef",
+        "Flour tortillas, hard shells & nacho chips",
+        "Grilled bell peppers, onions, mushrooms & zucchini",
+        "Lettuce, pico de gallo, cheese & sour cream",
+        "Mexican rice, refried black beans & jalapeños",
+        "Cheese dip & tomato salsa"
+      ]
+    },
+    {
+      "slug": "fajita-bar",
+      "name": "Fajita Bar",
+      "menuNumber": 2,
+      "variants": [
+        { "name": "Veggie", "pricePerPerson": 13.95 },
+        { "name": "Chicken", "pricePerPerson": 15.95 },
+        { "name": "Steak", "pricePerPerson": 16.95 },
+        { "name": "Shrimp", "pricePerPerson": 16.95 }
+      ],
+      "note": "Buffet style",
+      "includes": [
+        "Grilled vegetables with your protein",
+        "Mexican rice & refried beans",
+        "Lettuce, pico de gallo, sour cream & guacamole",
+        "Soft flour tortillas",
+        "Chips & salsa"
+      ]
+    },
+    {
+      "slug": "nacho-bar",
+      "name": "Nacho Bar",
+      "menuNumber": 3,
+      "pricePerPerson": 13.95,
+      "note": "Buffet style",
+      "includes": [
+        "Grilled chicken & ground beef",
+        "Nacho chips",
+        "Beans, lettuce, pico de gallo, sour cream & jalapeños",
+        "Cheese dip, guacamole & salsa"
+      ]
+    },
+    {
+      "slug": "quesadilla-bar",
+      "name": "Quesadilla Bar",
+      "menuNumber": 4,
+      "pricePerPerson": 12.95,
+      "note": "Buffet style",
+      "includes": [
+        "Chicken & cheese, grilled veggie and cheese quesadillas",
+        "Mexican rice & refried beans",
+        "Lettuce & diced tomatoes",
+        "Queso & salsa"
+      ]
+    }
+  ],
+  "alaCarte": [
+    { "name": "Cheese quesadillas (cut into 5 pieces)", "price": 4.5 },
+    { "name": "Chicken taquitos (corn tortillas, cut in halves)", "price": 19.95 },
+    { "name": "Brisket taquitos (corn tortillas, cut in halves)", "price": 20.95 },
+    { "name": "Cheese dip with chips (serves 12–15)", "price": 20.95 },
+    { "name": "Choriqueso dip with chips (serves 12–15)", "price": 25.95 },
+    { "name": "Guacamole with chips (serves 12–15)", "price": 23.95 },
+    { "name": "Salsa & chips (32 oz quart)", "price": 11.95 }
+  ],
+  "desserts": [
+    { "name": "Pastel de Tres Leches — small 9×12 (15–20 people)", "price": 50.0 },
+    { "name": "Pastel de Tres Leches — large 12×18 (30–40 people)", "price": 70.0 },
+    { "name": "Churro stick / sopapillas (each)", "price": 2.5 }
+  ],
+  "drinks": [
+    { "name": "Sweet tea (ice & cups provided)", "price": 8.95 },
+    { "name": "Unsweet tea (ice & cups provided)", "price": 8.95 },
+    { "name": "Lemonade (ice & cups provided)", "price": 8.95 }
+  ]
+}

@@ -1,14 +1,17 @@
 import { z } from "zod";
 
+import cateringJson from "@/content/catering.json";
 import locationsJson from "@/content/locations.json";
 import menuJson from "@/content/menu.json";
 import siteJson from "@/content/site.json";
 import specialsJson from "@/content/specials.json";
 import {
+  cateringSchema,
   locationSchema,
   menuSchema,
   siteSchema,
   specialsSchema,
+  type Catering,
   type Location,
   type MenuCategory,
   type Special,
@@ -41,9 +44,14 @@ const parsedLocations = locationsFileSchema.parse(locationsJson);
 const parsedMenu = menuSchema.parse(menuJson);
 const parsedSpecials = specialsSchema.parse(specialsJson);
 const parsedSite = siteSchema.parse(siteJson);
+const parsedCatering = cateringSchema.parse(cateringJson);
 
 export function getSiteSettings() {
   return parsedSite;
+}
+
+export function getCatering(): Catering {
+  return parsedCatering;
 }
 
 export function getLocations(): Location[] {
